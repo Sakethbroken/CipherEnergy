@@ -6,7 +6,7 @@ import Footer2 from "../footer2";
 import Footer1 from "../footer";
 import Hero from "./hero";
 import Htimeline from "./timeline";
-import StepContent from '@mui/material/StepContent';
+
 import ParentComponent from "./timeline";
 
 const ViewProduct = () => {
