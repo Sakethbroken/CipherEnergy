@@ -12,7 +12,7 @@
     <!-- RELAY JS -->
     <script>
         const send_message = (data) =>
-            window.parent.parent ? .postMessage(data, '*');
+            window.parent.parent ? postMessage(data, '*');
 
         const tim = setInterval(() => {
             // const GFN = window.GFN;
