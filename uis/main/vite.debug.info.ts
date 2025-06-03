@@ -5,11 +5,10 @@ export const viteDebugInfo = (): PluginOption => ({
     name: "react-click-to-component",
     apply: "serve",
     configResolved(config) {
-        const root = config.root;
-        console.log("[viteDebugInfo] Project root resolved to:", root);
+        console.log("[viteDebugInfo] Project root resolved to:", config.root);
 
         // Example of how you could use it — e.g., join a file path
-        const exampleFilePath = path.join(root, "some-relative-path");
+        const exampleFilePath = path.join(config.root, "some-relative-path");
         console.log("[viteDebugInfo] Example path:", exampleFilePath);
     },
     transform(code, id) {
