@@ -15,7 +15,7 @@ const Aboutpage = () => {
 
   // Toggle the visibility of the sidebar
   const toggleSidebar = () => {
-    setShowSidebar((prev) => !prev);
+    setShowSidebar((prev) => !prev);  
   };
 
   // Handle screen resize and update isMobile state
@@ -41,7 +41,7 @@ const Aboutpage = () => {
       {/* Hero Section with Background */}
       <div className="relative">
         {/* Fixed position header for better stacking context */}
-        <div className="relative z-20">
+        <div className="relative z-21">
           <Header 
             onHamburgerClick={toggleSidebar} 
             bgcolor="bg-transparent" 
