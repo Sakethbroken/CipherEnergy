@@ -1,4 +1,4 @@
-import CompKanban from "@/comp/comp_kanban"
+
 import ViewProduct from "./viewproduct"
 
 
