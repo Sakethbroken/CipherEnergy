@@ -1,10 +1,16 @@
 import { PluginOption } from "vite";
-let root = "";
+import path from "path";
+
 export const viteDebugInfo = (): PluginOption => ({
     name: "react-click-to-component",
     apply: "serve",
     configResolved(config) {
-        root = config.root;
+        const root = config.root;
+        console.log("[viteDebugInfo] Project root resolved to:", root);
+
+        // Example of how you could use it — e.g., join a file path
+        const exampleFilePath = path.join(root, "some-relative-path");
+        console.log("[viteDebugInfo] Example path:", exampleFilePath);
     },
     transform(code, id) {
         if (!id.includes("jsx-dev-runtime.js")) return;
@@ -18,4 +24,5 @@ export const viteDebugInfo = (): PluginOption => ({
         );
     },
 });
+
 export default viteDebugInfo;

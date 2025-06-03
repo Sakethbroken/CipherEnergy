@@ -1,12 +1,14 @@
 import CompKanban from "@/comp/comp_kanban"
+import Apps from "./applications"
 
 
-const Page1 = () => {
+
+const Apps1 = () => {
     return (
         <div>
-            <CompKanban />
+        <Apps/>
         </div>
     )
 }
 
-export default Page1
+export default Apps1

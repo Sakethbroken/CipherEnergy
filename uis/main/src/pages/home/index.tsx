@@ -1,11 +1,15 @@
-import DashboardPage from "./Dashboard"
+import CHome from "./home"
 const Home = () => {
 
     return (
-        <div className=" flex mt-10 flex-col gap-4">
-            <DashboardPage />
-        </div>
-    )
+      <>
+      <div>
+      <CHome />
+    </div>
+
+</>
+      );
+      
 }
 
 export default Home
