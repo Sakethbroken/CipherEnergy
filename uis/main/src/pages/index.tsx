@@ -1,5 +1,4 @@
-import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+
 import Home from "./home";
 import OrdersPage from "./products";
 import { Route, Routes } from "react-router-dom";
