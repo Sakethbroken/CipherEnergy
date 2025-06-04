@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import React from "react";
-import bluemoon from "../ASSETS/images/bluemoon.png";
-import cipherenergy from "../ASSETS/images/CIPHERENERGY.png";
-import youtube from "../ASSETS/icons/youtube.png";
-import x from "../ASSETS/icons/x.png";
-import linkedin from "../ASSETS/icons/linkedin.png";
+import bluemoon from "../assets/images/bluemoon.png";
+import cipherenergy from "../assets/images/CIPHERENERGY.png";
+import youtube from "../assets/icons/youtube.png";
+import x from "../assets/icons/x.png";
+import linkedin from "../assets/icons/linkedin.png";
 
 const Footer1 = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import leafbg from "../ASSETS/images/leafbg.png";
+import leafbg from "../assets/images/leafbg.png";
 
 const Footer2 = () => {
   return (
