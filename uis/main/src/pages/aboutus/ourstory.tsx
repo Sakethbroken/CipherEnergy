@@ -1,9 +1,9 @@
 
-import gear1 from "../../assets/images/gear1.png";
 
 const indiaMapImage = "/images/indiamap.png";
 
 const Story = () => {
+  const gear1 = "/images/gear1.png";
   return (
     <section className="flex flex-col items-center justify-center w-full px-4 sm:px-6 lg:px-8 py-12 md:py-16">
       {/* Section Heading */}
