@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
-import ev from "../../ASSETS/images/ev.png";
-import verified from "../../ASSETS/icons/verified.png";
+import ev from "../../assets/images/ev.png";
+import verified from "../../assets/icons/verified.png";
 import Cards from "./cards";
-import expand from "../../ASSETS/icons/expand.png";
+import expand from "../../assets/icons/expand.png";
 
 const Apps = () => {
   const [showSidebar, setShowSidebar] = useState(false);

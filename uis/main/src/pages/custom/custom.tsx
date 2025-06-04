@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
-import customization from "../../ASSETS/images/customization.png"
+import customization from "../../assets/images/customization.png"
 import ParentComponent from "../viewproduct/timeline";
 import Footer1 from "../footer";
 import ParentComponent1 from "./timeline";

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
 // Import images
-import ev from "../../ASSETS/images/ev.png";
-import machine from "../../ASSETS/images/machine.png";
-import plane from "../../ASSETS/images/plane.png";
+import ev from "../../assets/images/ev.png";
+import machine from "../../assets/images/machine.png";
+import plane from "../../assets/images/plane.png";
 
 const carouselItems = [
   {

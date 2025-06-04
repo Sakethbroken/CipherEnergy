@@ -4,7 +4,7 @@ import {
     CarouselItem,
   } from "@/components/ui/carousel";
   import { useState } from "react";
-  import dummy from "../../ASSETS/images/dummy.png"
+  import dummy from "../../assets/images/dummy.png"
   const Hero = () => {
     const [activeIndex, setActiveIndex] = useState(2);
     const images = [1, 2, 3, 4, 5];

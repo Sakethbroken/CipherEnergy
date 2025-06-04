@@ -1,6 +1,6 @@
 import React from "react";
-import engine from "../../ASSETS/images/engine.png";
-import power from "../../ASSETS/icons/power.png";
+import engine from "../../assets/images/engine.png";
+import power from "../../assets/icons/power.png";
 import {Link} from "react-router-dom"
 const griditems = [
   { id: 1, active: true },

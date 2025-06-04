@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
 import Footer1 from "../footer";
-import expand from "../../ASSETS/icons/expand.png"
+import expand from "../../assets/icons/expand.png"
 
 const Res = () => {
   const [showSidebar, setShowSidebar] = useState(false);

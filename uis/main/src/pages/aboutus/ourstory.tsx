@@ -1,5 +1,5 @@
-import indiamap from "../../ASSETS/images/indiamap.png";
-import gear1 from "../../ASSETS/images/gear1.png";
+import indiamap from "../../assets/images/indiamap.png";
+import gear1 from "../../assets/images/gear1.png";
 
 const Story = () => {
   return (

@@ -1,6 +1,6 @@
-import quote from "../../ASSETS/icons/quot.png";
-import leafbg from "../../ASSETS/images/leafbg.png";
-import leaficon from "../../ASSETS/icons/leaficon.png";
+import quote from "../../assets/icons/quot.png";
+import leafbg from "../../assets/images/leafbg.png";
+import leaficon from "../../assets/icons/leaficon.png";
 
 const VandM = () => {
   return (

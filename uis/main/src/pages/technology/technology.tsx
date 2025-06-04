@@ -2,10 +2,10 @@ import { useState } from "react";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
 import axialflux from "../../assets/images/axialflux.png";
-import fluximg from "../../ASSETS/images/fluximg.png";
-import coolsystem from "../../ASSETS/images/coolingsystem.png";
-import inductor from "../../ASSETS/images/inductor.png";
-import efficiency from "../../ASSETS/images/efficiency.png";
+import fluximg from "../../assets/images/fluximg.png";
+import coolsystem from "../../assets/images/coolingsystem.png";
+import inductor from "../../assets/images/inductor.png";
+import efficiency from "../../assets/images/efficiency.png";
 import Footer1 from "../footer";
 
 // CARD COMPONENT

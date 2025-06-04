@@ -1,6 +1,6 @@
-import map from "../../ASSETS/images/map.png";
-import india from "../../ASSETS/icons/india.png";
-import location from "../../ASSETS/icons/location.png";
+import map from "../../assets/images/map.png";
+import india from "../../assets/icons/india.png";
+import location from "../../assets/icons/location.png";
 import Maps from "./gmaps";
 
 function Cards({ title }: { title: string }) {

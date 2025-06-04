@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import tgear from "../../ASSETS/icons/totalgear.png";
-import settings from "../../ASSETS/icons/settings.png";
-import powerb from "../../ASSETS/icons/powerbutton.png";
-import energy from "../../ASSETS/icons/leafw.png";
-import power from "../../ASSETS/icons/energyw.png";
+import tgear from "../../assets/icons/totalgear.png";
+import settings from "../../assets/icons/settings.png";
+import powerb from "../../assets/icons/powerbutton.png";
+import energy from "../../assets/icons/leafw.png";
+import power from "../../assets/icons/energyw.png";
 
 const benefits = [
   {

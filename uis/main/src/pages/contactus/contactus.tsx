@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Mobilesidebar from "../mobilesidebar";
 import Header from "../header";
-import location from "../../ASSETS/icons/location.png";
-import india from "../../ASSETS/icons/india.png";
+import location from "../../assets/icons/location.png";
+import india from "../../assets/icons/india.png";
 import Footer1 from "../footer";
 
 function Cards({ title, address }) {

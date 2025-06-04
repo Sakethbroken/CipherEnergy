@@ -1,7 +1,7 @@
-import leaficon from "../../ASSETS/images/leaficon.png"
-import gearmachine from "../../ASSETS/images/gearmachine.png"
+import leaficon from "../../assets/images/leaficon.png"
+import gearmachine from "../../assets/images/gearmachine.png"
 import {Link} from "react-router-dom"
-import gearmachine1 from "../../ASSETS/images/gearmachine1.png"
+import gearmachine1 from "../../assets/images/gearmachine1.png"
 
 const Hero = () => {
   return (
