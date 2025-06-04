@@ -1,12 +1,11 @@
 import Header from "../header"
 import { useState } from "react";
 import Mobilesidebar from "../mobilesidebar";
-import biggear from "../../assets/images/biggear.png";
+import biggear from "../../ASSETS/images/biggear.png";
 import Footer2 from "../footer2";
 import Footer1 from "../footer";
 import Hero from "./hero";
-import Htimeline from "./timeline";
-
+import Htimeline from "./timeline";;
 import ParentComponent from "./timeline";
 
 const ViewProduct = () => {

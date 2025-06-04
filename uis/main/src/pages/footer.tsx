@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-
-import bluemoon from "@images/bluemoon.png";
+import React from "react";
+import bluemoon from "../assets/images/bluemoon.png";
 import cipherenergy from "../assets/images/CIPHERENERGY.png";
 import youtube from "../assets/icons/youtube.png";
 import x from "../assets/icons/x.png";

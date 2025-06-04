@@ -3,6 +3,8 @@ import india from "../../assets/icons/india.png";
 import location from "../../assets/icons/location.png";
 import Maps from "./gmaps";
 
+
+
 function Cards({ title }: { title: string }) {
   return (
     <div className="flex flex-col gap-6 bg-[#FAF9F9] p-4 sm:p-6 w-full max-w-[380px] min-w-[270px] rounded-md shadow-md">

@@ -1,4 +1,4 @@
-//import AU from "@/assets/images/AU.png";
+import AU from "@images/AU.png";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
 import { useState, useEffect } from "react";
@@ -8,6 +8,7 @@ import VandM from "./Vission";
 import Locationpage from "./location";
 import Footer2 from "../footer2";
 import Footer1 from "../footer";
+
 
 const Aboutpage = () => {
   const [showSidebar, setShowSidebar] = useState(false);
