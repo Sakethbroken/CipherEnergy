@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
-import customization from "../../assets/images/customization.png"
-import ParentComponent from "../viewproduct/timeline";
+//import customization from "../../assets/images/customization.png"
 import Footer1 from "../footer";
 import ParentComponent1 from "./timeline";
 
@@ -11,6 +10,7 @@ const Customization=()=>{
     const toggleSidebar = () => {
         setShowSidebar((prev) => !prev);
       };
+      const customImage = "/images/customization.png";
     
         
     return(
@@ -39,7 +39,7 @@ const Customization=()=>{
   <div className="flex flex-col max-w-[1200px] items-center justify-center mx-auto">
 
 
-    <img src={customization} alt="" className="w-[668px] h-[450px]" />
+    <img src={customImage} alt="" className="w-[668px] h-[450px]" />
     <ParentComponent1/>
 
 
