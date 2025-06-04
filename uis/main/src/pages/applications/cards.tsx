@@ -14,7 +14,10 @@ const stats = [
   { icon: energy, alt: "Energy Efficiency", value: "95%", label: "energy efficiency", shadow: false },
 ];
 
+
+
 const Cards = ({ title }) => {
+  
   return (
     <div className="flex flex-col w-full max-w-[1200px] mx-auto px-4 py-4">
       {/* Title and CTA Button */}
