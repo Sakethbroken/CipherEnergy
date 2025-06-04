@@ -1,4 +1,4 @@
-import person1 from '../../assets/images/person1.jpg';
+//import person1 from '../../assets/images/person1.jpg';
 import person2 from '../../assets/images/person2.jpg';
 import person3 from '../../assets/images/person3.jpg';
 import person4 from '../../assets/images/person4.jpg';
@@ -45,7 +45,7 @@ const teamSections = [
     title: 'Leadership',
     description: 'About Leadership',
     members: [
-      { image: person1, title: 'Director/title', name: 'Alice Johnson' },
+      { image: person2, title: 'Director/title', name: 'Alice Johnson' },
       { image: person2, title: 'Director/title', name: 'Bob Lee' },
       { image: person3, title: 'Director/title', name: 'Carol Wang' },
       { image: person4, title: 'Director/title', name: 'David Kim' },
@@ -56,7 +56,7 @@ const teamSections = [
     description:
       'Our Founders hold backgrounds in electrical engineering and sustainable energy',
     members: [
-      { image: person1, title: 'Founder', name: 'Emily Chen' },
+      { image: person2, title: 'Founder', name: 'Emily Chen' },
       { image: person2, title: 'Co-Founder', name: 'Frank Zhang' },
       { image: person3, title: 'CTO', name: 'Grace Park' },
       { image: person4, title: 'CEO', name: 'Hank Patel' },
@@ -66,7 +66,7 @@ const teamSections = [
     title: 'Technical Leadership',
     description: 'Our experts in motor design and manufacturing',
     members: [
-      { image: person1, title: 'Tech Lead', name: 'Ivy Rao' },
+      { image: person2, title: 'Tech Lead', name: 'Ivy Rao' },
       { image: person2, title: 'Engineer', name: 'Jack Singh' },
       { image: person3, title: 'Engineer', name: 'Kiran Das' },
       { image: person4, title: 'Engineer', name: 'Liam Roy' },
@@ -77,7 +77,7 @@ const teamSections = [
     description:
       'Comes with an experience in India’s energy and automotive sectors',
     members: [
-      { image: person1, title: 'BD Manager', name: 'Maya Iyer' },
+      { image: person2, title: 'BD Manager', name: 'Maya Iyer' },
       { image: person2, title: 'Analyst', name: 'Nikhil Rao' },
       { image: person3, title: 'Strategist', name: 'Olivia Thomas' },
       { image: person4, title: 'Growth Lead', name: 'Pranav Desai' },
