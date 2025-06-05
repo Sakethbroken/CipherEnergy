@@ -1,4 +1,4 @@
-import power from "../../assets/icons/peak.png";
+import power from "../../assets/icons/peak1.png";
 import continuous from "../../assets/icons/continuous.png";
 import energy from "../../assets/icons/energy.png";
 import ctorque from "../../assets/icons/conttorque.png";
