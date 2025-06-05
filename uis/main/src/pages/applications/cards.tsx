@@ -3,7 +3,7 @@ import continuous from "../../assets/icons/continuous.png";
 import energy from "../../assets/icons/energy.png";
 import ctorque from "../../assets/icons/conttorque.png";
 import torque from "../../assets/icons/peaktorque.png";
-import mass from "../../assets/icons/Mass.png";
+import mass from "../../assets/icons/mass1.png";
 
 const stats = [
   { icon: power, alt: "Peak Power", value: "130KW", label: "peak power", shadow: true },
