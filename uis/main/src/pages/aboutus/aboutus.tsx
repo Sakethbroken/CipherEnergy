@@ -1,4 +1,4 @@
-import AU from "@images/AU.png";
+// import AU from "@images/AU.png";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
 import { useState, useEffect } from "react";
