@@ -59,8 +59,9 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
   const baseBoxClass =
     "border rounded-lg p-6 cursor-pointer w-full sm:w-[280px] h-[140px] text-black flex items-center justify-center text-center";
 
-  const gridWrapperClass =
-    "grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full max-w-6xl mx-auto";
+const gridWrapperClass =
+  "grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl mx-auto";
+
 
   switch (step) {
     case 1:
@@ -250,9 +251,13 @@ const ParentComponent = () => {
           }
         );
 
-
-
         const data = await res.json();
+
+        console.log("Response from backend:", data);
+        if (!data.success) {
+          console.error("Error from backend:", data);
+          return
+        }
 
         console.log("Submitted JSON:", data);
         setSubmissionComplete(true);

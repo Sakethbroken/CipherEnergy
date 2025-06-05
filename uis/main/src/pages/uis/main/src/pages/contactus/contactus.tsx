@@ -67,7 +67,7 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
@@ -76,6 +76,10 @@ const Contact = () => {
     }
 
     setSubmitting(true);
+<<<<<<< HEAD:uis/main/src/pages/contactus/contactus.tsx
+    setTimeout(() => {
+      setSubmitting(false);
+=======
     setSubmitError(null);
     setSubmitSuccess(false);
 
@@ -94,6 +98,7 @@ const Contact = () => {
         throw new Error(result?.m || 'Something went wrong while submitting');
       }
 
+>>>>>>> f61bc6d (backend functionlity linked):contactus/contactus.tsx
       setSubmitSuccess(true);
       setFormData({
         name: "",
@@ -102,6 +107,10 @@ const Contact = () => {
         interest: "",
         message: ""
       });
+<<<<<<< HEAD:uis/main/src/pages/contactus/contactus.tsx
+      setTimeout(() => setSubmitSuccess(false), 5000);
+    }, 1000);
+=======
 
       setTimeout(() => setSubmitSuccess(false), 5000);
     } catch (err) {
@@ -109,6 +118,7 @@ const Contact = () => {
     } finally {
       setSubmitting(false);
     }
+>>>>>>> f61bc6d (backend functionlity linked):contactus/contactus.tsx
   };
 
   return (
