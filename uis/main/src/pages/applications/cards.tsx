@@ -1,6 +1,6 @@
 import power from "../../assets/icons/peak1.png";
 import continuous from "../../assets/icons/continuous.png";
-import energy from "../../assets/icons/energy.png";
+import energy from "../../assets/icons/energy1.png";
 import ctorque from "../../assets/icons/conttorque.png";
 import torque from "../../assets/icons/peaktorque.png";
 import mass from "../../assets/icons/mass1.png";
