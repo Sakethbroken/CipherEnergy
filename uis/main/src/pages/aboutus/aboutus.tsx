@@ -1,4 +1,4 @@
-// import AU from "@images/AU.png";
+import AU from "../../assets/images/AU.png";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
 import { useState, useEffect } from "react";
@@ -58,7 +58,7 @@ const Aboutpage = () => {
         {/* Background image with proper sizing */}
         <div className="absolute inset-0 z-0">
           <img 
-            //src={AU} 
+            src={AU} 
             alt="About Us Background" 
             className="w-full h-full object-cover" 
           />

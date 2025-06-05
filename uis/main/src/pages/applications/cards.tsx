@@ -1,8 +1,8 @@
 import power from "../../assets/icons/peak.png";
 import continuous from "../../assets/icons/continuous.png";
-import energy from "../../assets/icons/Energy.png";
-import ctorque from "../../assets/icons/Cont Torque.png";
-import torque from "../../assets/icons/Peak Torque.png";
+import energy from "../../assets/icons/energy.png";
+import ctorque from "../../assets/icons/conttorque.png";
+import torque from "../../assets/icons/peaktorque.png";
 import mass from "../../assets/icons/Mass.png";
 
 const stats = [
