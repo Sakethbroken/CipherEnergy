@@ -3,7 +3,7 @@ import continuous from "../../assets/icons/continuous.png";
 import energy from "../../assets/icons/Energy.png";
 import ctorque from "../../assets/icons/conttorque.png";
 import torque from "../../assets/icons/peaktorque.png";
-import mass from "../../assets/icons/mass.png";
+import mass from "../../assets/icons/mass1.png";
 import { Link } from "react-router-dom";
 const stats = [
   { icon: power, alt: "Peak Power", value: "130KW", label: "peak power", shadow: true },
