@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
+import cipherlogo from "../assets/images/Logo.png"
 
 import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 
@@ -9,7 +10,7 @@ interface HeaderProps {
   bgcolor?: string;
   highlightOnClick?: boolean;
 }
-const cipherlogo = "/images/Logo.png";
+
 
 const Header: React.FC<HeaderProps> = ({
   onHamburgerClick,
