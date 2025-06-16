@@ -45,9 +45,9 @@ const BenefitsTimeline = () => {
   ];
 
   const positions = [
-    { top: "100px", left: "0" },
+    { top: "100px", left: "10%" },
     { top: "100px", left: "60%" },
-    { top: "700px", left: "0" },
+    { top: "700px", left: "10%" },
     { top: "700px", left: "60%" },
   ];
 
@@ -95,13 +95,13 @@ const BenefitsTimeline = () => {
           return (
             <motion.div
               key={index}
-              className="absolute bg-[#303030CC] text-white p-6 rounded-lg shadow-lg z-10"
+              className="absolute bg-[#303030CC] text-white p-6 rounded-[2rem]  shadow-lg z-10"
               style={{
                 top: position.top,
                 left: position.left,
                 transform: position.left.includes("%") ? "translateX(-50%)" : "none",
-                width: "350px",
-                height: "350px",
+                width: "388px",
+                height: "406px",
               }}
               variants={cardVariants}
             >

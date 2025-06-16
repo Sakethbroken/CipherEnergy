@@ -7,25 +7,30 @@ import Footer1 from "../footer";
 
 function Cards({ title, address }) {
   return (
-    <div className="flex flex-col gap-9 bg-[#8BECFF4D] rounded-md px-2 py-2 w-[340px] sm:w-[382px] hover:shadow-md transition">
-      <div className="flex justify-between">
-        <img src={location} alt="" className="w-[36px] h-[36px] rounded-full cursor-pointer" />
-        <img src={india} alt="" className="w-[28px] h-[28px] rounded-full cursor-pointer" />
-      </div>
-      <h1 className="font-body text-black font-bold text-lg leading-none uppercase cursor-pointer">{title}</h1>
-      <p className="font-body font-normal text-md leading-[27px] opacity-80 align-middle">
-        {address || "[address here]"}
-      </p>
-      <button
-        className="cursor-pointer text-xs sm:text-sm font-semibold w-[128px] h-[40px] rounded-sm 
-          border border-transparent bg-white hover:opacity-30 transition 
-          [border-image:linear-gradient(to_bottom,#020919,#074FF7,#6384E9,#074FF7,#020919)_1] 
-          [border-image-slice:1] overflow-hidden
-          text-transparent bg-clip-text 
-          bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]">
-        Explore Products
-      </button>
-    </div>
+<div className="flex flex-col gap-9 bg-[#8BECFF4D] rounded-xl pb-5 px-2 py-2 w-[340px] sm:w-[382px] hover:shadow-md transition">
+  <div className="flex mt-2 justify-between">
+    <img src={location} alt="" className="w-[36px] h-[36px] rounded-full cursor-pointer" />
+    <img src={india} alt="" className="w-[28px] h-[28px] rounded-full cursor-pointer" />
+  </div>
+
+  {/* Wrap title and button in a left-aligned container */}
+  <div className="flex flex-col items-start gap-10">
+    <h1 className=" font-normal text-[32px] leading-[120%] tracking-[-2.16%] align-middle cursor-pointer">
+      {title}
+    </h1>
+
+    <p className="font-body font-normal text-md leading-[27px] opacity-80 align-middle">
+      {address || "[address here]"}
+    </p>
+
+    <button
+      className="self-start text-xs sm:text-sm font-semibold w-[120px] sm:w-[150px] px-2 h-[40px] rounded-md border-2 border-[#074FF7] hover:opacity-30 transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]"
+    >
+      Explore Products
+    </button>
+  </div>
+</div>
+
   );
 }
 
@@ -118,15 +123,15 @@ const Contact = () => {
 
       <div className="bg-[#F4F4F4] flex flex-col py-10 justify-center text-center">
         <em className="playfair bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic text-center">
-          Our Story
+          Contact us
         </em>
 
         <div className="w-screen lg:w-[1300px] bg-white rounded-2xl mx-auto mt-10 flex flex-col-reverse lg:flex-row justify-center items-center gap-5">
           <div className="w-[340px] h-[162px] lg:h-[635px] flex flex-col justify-between my-5 rounded-2xl lg:rounded-none">
             <div className="text-start">{contactInfo.responseTime}</div>
             <div>
-              <h1 className="text-start cursor-pointer hover:text-blue-600 transition">{contactInfo.email}</h1>
-              <h1 className="text-start cursor-pointer hover:text-blue-600 transition">{contactInfo.phone}</h1>
+              <h1 className="text-start  hover:text-blue-600 transition">{contactInfo.email}</h1>
+              <h1 className="text-start  hover:text-blue-600 transition">{contactInfo.phone}</h1>
             </div>
           </div>
 
@@ -196,8 +201,6 @@ const Contact = () => {
                   <option value="product_inquiry">Product Inquiry</option>
                   <option value="partnership">Partnership</option>
                   <option value="support">Support</option>
-                  <option value="investment">Investment</option>
-                  <option value="career">Career</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -228,7 +231,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-5 justify-center items-center mt-10 mx-auto w-full lg:w-[1170px]">
+        <div className="flex flex-col lg:flex-row gap-12 justify-center items-center mt-10 mx-auto w-full lg:w-[1170px]">
           {locations.map((location, index) => (
             <Cards key={index} title={location.title} address={location.address} />
           ))}

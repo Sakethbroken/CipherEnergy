@@ -1,6 +1,7 @@
 import leaficon from "../../assets/images/leaficon.png"
 import gearmachine from "../../assets/images/gearmachine.png"
 import {Link} from "react-router-dom"
+import gearr from "../../assets/images/gearr.png"
 import gearmachine1 from "../../assets/images/gearmachine1.png"
 
 const Hero = () => {
@@ -17,47 +18,50 @@ const Hero = () => {
       </div>
     
       {/* heading */}
-      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-medium leading-tight">
-        <em className="bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent font-extrabold italic playfair">
+      <div className="w-full max-w-[870px]">
+      <h1 className="text-center leading-[100%] font-extrabold">
+        <em className="playfair bg-gradient-to-r text-[32px] md:text-[48px] lg:text-[64px] tracking-[-0.02em] from-black to-[#074FF7] bg-clip-text text-transparent italic">
           Revolutionary
-        </em> Axial Flux
+        </em>{" "} {" "}
+        <span className="body font-medium text-[32px] md:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.02em] text-center">Axial Flux</span>
         <br className="hidden sm:block" />
+          <span className="body font-medium text-[32px] md:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.02em] text-center">
         Electric Motors for India's
+        </span>
         <br className="hidden sm:block" />
-        Energy <em className="bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent font-extrabold italic playfair">
+         <span className="body font-medium text-[32px] md:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.02em] text-center">
+        Energy
+        </span>
+        {" "}  {" "}
+         <em className="playfair bg-gradient-to-r font-['Playfair'] text-[32px] md:text-[48px] lg:text-[64px] tracking-[-0.02em] from-black to-[#074FF7] bg-clip-text text-transparent italic">
           Future.
         </em>
       </h1>
+      </div>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-5 sm:gap-8 w-full sm:w-auto">
         <Link
           to="./contactus"
           className="flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-[128px] h-[40px] rounded-sm
             bg-gradient-to-tr from-[#020919] via-[#074FF7] via-40% via-[#6384E9] to-[#020919]
-            text-white hover:opacity-30 transition"
+            text-white  transition"
         >
           REQUEST DEMO
         </Link>
-
-        <Link
-          to="./products"
-          className="flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-[128px] h-[40px] rounded-sm 
-            border border-transparent bg-[length:200%] hover:opacity-30 transition 
-            [border-image:linear-gradient(to_bottom,#020919,#074FF7,#6384E9,#074FF7,#020919)_1] 
-            [border-image-slice:1] overflow-hidden
-            text-transparent bg-clip-text 
-            bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]"
-        >
-          Explore Products
-        </Link>
+<Link
+ to="./products"
+ className="flex justify-center items-center text-xs sm:text-sm font-semibold w-[187px] sm:w-auto px-6 h-[40px] rounded-md border-2 border-[#074FF7]  transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]"
+>
+ EXPLORE PRODUCTS
+</Link>
       </div>   
     </div>
 
     <div className="w-full overflow-hidden">
       <img 
-        src={gearmachine1} 
+        src={gearr} 
         alt="" 
-        className="mx-auto transform rotate-28 w-full max-w-[900px] object-contain" 
+        className="mx-auto transform  w-full max-w-[900px] object-contain" 
       />
     </div>
     </>

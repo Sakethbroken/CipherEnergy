@@ -263,8 +263,10 @@ const Res = () => {
                   e.stopPropagation();
                   toggleCaseStudyReadMore(card.id);
                 }}
-                className="cursor-pointer hidden sm:block text-xs sm:text-sm font-semibold w-full sm:w-[128px] h-[40px] rounded-sm border border-transparent bg-[length:200%] hover:opacity-30 transition [border-image:linear-gradient(to_bottom,#020919,#074FF7,#6384E9,#074FF7,#020919)_1] [border-image-slice:1] overflow-hidden text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]"
-              >
+                className="relative hidden cursor-pointer lg:flex text-xs sm:text-sm h-[36px] w-[100px] font-semibold items-center justify-center rounded-[8px] text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] via-[#074FF7] to-[#020919] whitespace-nowrap
+      before:absolute before:inset-0 before:rounded-[8px] before:p-[2px] before:bg-gradient-to-b before:from-[#020919] before:via-[#074FF7] before:via-[#6384E9] before:via-[#074FF7] before:to-[#020919] before:-z-10
+      after:absolute after:inset-[2px] after:rounded-[6px] after:bg-white after:-z-10">
+              
                 {expandedCaseStudies[card.id] ? "Show Less" : "Read more"}
               </button>
             </div>

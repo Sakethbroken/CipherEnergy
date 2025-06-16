@@ -55,7 +55,7 @@ const Footer2 = () => {
 
     <button className="text-white text-sm cursor-pointer font-semibold w-[180px] h-[40px] rounded-sm
       bg-gradient-to-tr from-[#020919] via-[#074FF7] via-40% via-[#6384E9] to-[#020919] 
-      hover:opacity-30 transition mt-6 lg:mt-0
+       transition mt-6 lg:mt-0
     ">
       Request Demo
     </button>

@@ -16,18 +16,22 @@ const Prod=()=>{
     <div>
         <Header onHamburgerClick={toggleSidebar} />
         {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
-        <div className="">
+        <div className="mb-10">
             <Hero/>
         </div>
 
 
         <div className="flex flex-col pb-20 mt-15 gap-10 items-center w-full">
-            <Cards title={"CEM 1"}/>
-            <Cards title={"CEM 2"}/>
-            <Cards title={"CEM 3"}/>
-            <Cards title={"CEM 4"}/>
-            <Cards title={"CEM 5"}/>
-            <Cards title={"CEM 6"}/>
+          
+          <Cards title="cem 1" productId="cem1" />
+
+
+          
+          <Cards title="cem 2" productId="cem2" />
+          <Cards title="cem 3" productId="cem3" />
+          <Cards title="cem 4" productId="cem4" />
+          <Cards title="cem 5" productId="cem5" />
+          <Cards title="cem 6" productId="cem6" />
         </div>
 
         <Footer2/>

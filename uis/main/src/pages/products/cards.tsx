@@ -5,59 +5,74 @@ import ctorque from "../../assets/icons/conttorque.png";
 import torque from "../../assets/icons/peaktorque.png";
 import mass from "../../assets/icons/mass1.png";
 import { Link } from "react-router-dom";
+
 const stats = [
-  { icon: power, alt: "Peak Power", value: "130KW", label: "peak power", shadow: true },
-  { icon: continuous, alt: "Continuous Power", value: "65KW", label: "continuous power", shadow: false },
-  { icon: torque, alt: "Peak Torque", value: "240NM", label: "peak torque", shadow: true },
-  { icon: ctorque, alt: "Continuous Torque", value: "120NM", label: "continuous torque", shadow: false },
-  { icon: mass, alt: "Mass", value: "42KG", label: "mass", shadow: true },
-  { icon: energy, alt: "Energy Efficiency", value: "95%", label: "energy efficiency", shadow: false },
+  { icon: power, alt: "Peak Power", value: "130 kW", label: "Peak Power", shadow: true },
+  { icon: continuous, alt: "Continuous Power", value: "75 kW", label: "Continuous Power", shadow: false },
+  { icon: torque, alt: "Peak Torque", value: "125 Nm", label: "Peak Torque", shadow: true },
+  { icon: ctorque, alt: "Continuous <br/> Torque", value: "185 Nm", label: "Continuous Torque", shadow: false },
+  { icon: mass, alt: "Mass", value: "14.5 kG", label: "Mass", shadow: true },
+  { icon: energy, alt: "Energy Efficiency", value: "15%", label: "Energy Savings", shadow: false },
 ];
 
-const Cards = ({ title }) => {
+const Cards = ({ title, productId }) => {
   return (
-    <div className="flex flex-col w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    
+
+    
+     
+
+    <div className="flex flex-col w-full max-w-[1200px] mx-auto px-2 sm:px-6 lg:px-8 py-4">
       {/* Title and CTA Button */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-        <h1 className="font-bold text-2xl sm:text-4xl opacity-80">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+        <h1 className="font-bold text-2xl sm:text-4xl opacity-80 text-center sm:text-left">
           {title.toUpperCase()} SERIES
         </h1>
         <Link
-          to="/viewproduct"
-          className="text-xs sm:text-sm h-[36px] font-semibold px-3 rounded-md border border-transparent hover:opacity-30
-          [border-image:linear-gradient(to_bottom,#020919,#074FF7,#6384E9,#074FF7,#020919)_1]
-          [border-image-slice:1] text-transparent bg-clip-text
-          bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] via-[#074FF7] to-[#020919]
-          whitespace-nowrap"
+          to={`/${productId}`}
+                  className="flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] rounded-md border-2 border-[#074FF7] transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]"
+
         >
-          View more about CEM1
+          View more about {title.toUpperCase()}
         </Link>
       </div>
+   
 
- {/* Responsive Images Section */}
-<div className="mt-6 overflow-x-auto lg:overflow-x-visible scrollbar-hide">
-  <div className="flex gap-4 w-max lg:w-full">
-    <div className="min-w-[280px] lg:w-1/2 h-[280px] bg-gray-300 rounded-lg"></div>
-    <div className="min-w-[280px] lg:w-1/2 h-[280px] bg-gray-300 rounded-lg"></div>
+      {/* Responsive Images Section */}
+     <div className="mt-6 overflow-x-auto md:overflow-x-hidden lg:overflow-x-visible scrollbar-hide">
+  <div className="flex gap-4 w-max md:w-full">
+    <div className="min-w-[280px] md:flex-1 h-[280px] bg-gradient-to-br from-[#ffffff] to-[#999999] rounded-[2rem] shadow-md"></div>
+    <div className="min-w-[280px] md:flex-1 h-[280px] bg-gradient-to-br from-[#ffffff] to-[#999999] rounded-[2rem] shadow-md"></div>
   </div>
 </div>
 
 
       {/* Stats Grid */}
-      <div className="w-full mt-6 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+       <div className="w-full mt-6 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {stats.map((card, idx) => (
-          <div
-            key={idx}
-            className={`h-[130px] sm:h-[150px] rounded-lg flex flex-col items-center justify-center 
-              ${card.shadow ? "shadow-md bg-white" : "bg-[#F5F5F5]"} 
-              p-2 sm:p-4 text-center`}
-          >
-            <div className="w-8 h-8 sm:w-12 sm:h-12 mb-1 sm:mb-2">
-              <img src={card.icon} alt={card.alt} className="w-full h-full object-contain" />
-            </div>
-            <span className="text-sm sm:text-lg font-bold">{card.value}</span>
-            <span className="text-[10px] sm:text-xs text-gray-500">{card.label}</span>
-          </div>
+  <div
+  key={idx}
+  className={`h-[130px] w-[180px] sm:h-[200px] rounded-[2rem] pl-4 flex flex-col items-start justify-center 
+    ${card.shadow ? "bg-white" : "bg-[#F5F5F5]"} 
+    p-2 sm:p-4 text-left`}
+>
+  <div className="pl-2 mb-3 sm:mb-4">
+    <img
+      src={card.icon}
+      alt={card.alt}
+      className="w-[48px] h-[48px]"
+    />
+  </div>
+  <span className="text-xl sm:text-2xl pl-2 font-bold mb-1">
+    {card.value}
+  </span>
+  <span className="text-sm sm:text-md pl-2 text-gray-500">
+    {card.label}
+  </span>
+</div>
+
+
+
         ))}
       </div>
     </div>

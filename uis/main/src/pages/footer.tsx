@@ -17,38 +17,51 @@ const Footer1 = () => {
             <button className="text-left hover:text-blue-300 cursor-pointer">Lorem ipsum</button>
           </div>
           <div className="flex flex-col gap-2">
-            <h4 className="font-semibold w-fit pb-1 cursor-pointer ">Resources</h4>
+            <h4 className="font-semibold w-fit pb-1 cursor-pointer">Resources</h4>
             <button className="text-left hover:text-blue-300 cursor-pointer">Blogs</button>
           </div>
           <div className="flex flex-col gap-2">
             <h4 className="font-semibold w-fit pb-1">Company</h4>
-            <Link to="/aboutus"className="text-left cursor-pointer hover:text-blue-300">About Us</Link>
-            <Link  to="/career" className="text-leftcursor-pointer  hover:text-blue-300">Career</Link>
-            <Link to="/contactus" className="text-left  cursor-pointer  hover:text-blue-300">Contact</Link>
+            <Link to="/aboutus" className="text-left cursor-pointer hover:text-blue-300">About Us</Link>
+            <Link to="/career" className="text-left cursor-pointer hover:text-blue-300">Career</Link>
+            <Link to="/contactus" className="text-left cursor-pointer hover:text-blue-300">Contact</Link>
           </div>
           <div className="flex flex-col gap-2">
             <h4 className="font-semibold w-fit pb-1">Legal</h4>
-            <Link to="/privacypolicy" className="text-left hover:text-blue-300">
-  Privacy Policy
-</Link>
+            <Link to="/privacypolicy" className="text-left hover:text-blue-300">Privacy Policy</Link>
           </div>
         </div>
 
         <div className="flex flex-col gap-3 w-full sm:w-[253px] h-[72px] items-center md:items-end">
           <div className="flex gap-5 text-right items-end">
-            <button className="cursor-pointer"> <img src={linkedin} alt="" className="src" /></button>
-            <button className="cursor-pointer"> <img src={x} alt="" className="src" /></button>
-            <button className="cursor-pointer"> <img src={youtube} alt="" className="src" /></button>
+            <button className="cursor-pointer">
+              <a
+                href="https://www.linkedin.com/company/cipher-energy1/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={linkedin} alt="LinkedIn" />
+              </a>
+            </button>
+            <button className="cursor-pointer">
+              <img src={x} alt="X" />
+            </button>
+            <button className="cursor-pointer">
+              <img src={youtube} alt="YouTube" />
+            </button>
           </div>
           <div className="">
-            <p className="w-full sm:w-[253px] text-sm text-center md:text-right">© CipherEnergy. All rights reserved 2025</p>
+            <p className="w-full sm:w-[253px] text-sm text-center md:text-right">
+              © CipherEnergy. All rights reserved 2025
+            </p>
           </div>
         </div>
       </div>
 
-     <div className="w-full max-w-[1340px] mt-30 mx-auto px-4 sm:px-6 overflow-hidden">
-  <img src={cipherenergy} alt="" className="w-full" />
-</div>
+      <div className="w-full max-w-[1340px] mt-30 mx-auto px-4 sm:px-6 overflow-hidden">
+        <img src={cipherenergy} alt="" className="w-full" />
+      </div>
+
       <div className="">
         <img src={bluemoon} alt="" className="w-full h-[100px] sm:h-[120px] md:h-[140px]" />
       </div>

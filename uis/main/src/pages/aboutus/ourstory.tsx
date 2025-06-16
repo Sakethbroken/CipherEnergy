@@ -1,5 +1,6 @@
 
-import gear1 from "../../assets/images/gear1.png";
+import gear1 from "../../assets/images/gear1.png"
+import indmap from "../../assets/images/indiamap.png";
 
 const indiaMapImage = "/images/indiamap.png";
 
@@ -36,7 +37,7 @@ const Story = () => {
           {/* Image section */}
           <div className="w-full md:w-1/2 flex justify-center md:justify-end mt-6 md:mt-0">
             <img
-              src={indiaMapImage}
+              src={indmap}
               alt="Map of India"
               className="w-full max-w-md h-auto rounded-2xl object-cover"
             />

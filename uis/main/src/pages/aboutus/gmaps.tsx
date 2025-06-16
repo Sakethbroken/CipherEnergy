@@ -1,40 +1,8 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-
-// Fix for default marker icons (important to display markers properly)
-// We need to handle the marker icons differently since they can't be bundled properly
-const defaultIcon = L.icon({
-  iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-  iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-  shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
-
-// Use this icon as the default for all markers
-L.Marker.prototype.options.icon = defaultIcon;
+import React from 'react';
 
 const Maps = () => {
   return (
-    <MapContainer 
-      center={[19.0760, 72.8777]} 
-      zoom={12} 
-      scrollWheelZoom={false} 
-      style={{ height: '400px', width: '100%' }}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={[19.0760, 72.8777]}>
-        <Popup>
-          Mumbai, India
-        </Popup>
-      </Marker>
-    </MapContainer>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16372.799121831238!2d72.81081084453264!3d18.97364657672748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce6ea1b17137%3A0xfe198eb13bcbf5e3!2sMumbai%20Central%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1749797580275!5m2!1sen!2sin" width="800" height="600"></iframe>
   );
 };
 
