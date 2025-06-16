@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView, useScroll, useTransform, Variants } from "framer-motion";
 import tgear from "../../assets/icons/totalgear.png";
 import settings from "../../assets/icons/settings.png";
 import powerb from "../../assets/icons/powerbutton.png";
-import energy from "../../assets/icons/leafw.png"
-import power from "../../assets/icons/energyw.png"
+import energy from "../../assets/icons/leafw.png";
+import power from "../../assets/icons/energyw.png";
 
 const BenefitsTimeline = () => {
   const containerRef = useRef(null);
@@ -51,7 +51,7 @@ const BenefitsTimeline = () => {
     { top: "700px", left: "60%" },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -59,7 +59,7 @@ const BenefitsTimeline = () => {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       y: 100,
       opacity: 0,
@@ -71,7 +71,7 @@ const BenefitsTimeline = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        type: "spring",
+        type: "spring" as const, // ✅ Fixes type compatibility
         stiffness: 80,
       },
     },
@@ -95,7 +95,7 @@ const BenefitsTimeline = () => {
           return (
             <motion.div
               key={index}
-              className="absolute bg-[#303030CC] text-white p-6 rounded-[2rem]  shadow-lg z-10"
+              className="absolute bg-[#303030CC] text-white p-6 rounded-[2rem] shadow-lg z-10"
               style={{
                 top: position.top,
                 left: position.left,
@@ -105,12 +105,11 @@ const BenefitsTimeline = () => {
               }}
               variants={cardVariants}
             >
-              {/* Corrected icon rendering */}
-              <div className="mb-3 flex items-start ">
+              <div className="mb-3 flex items-start">
                 <img
                   src={benefit.icon}
-                  alt={benefit.title + " icon"}
-                  className="w-12 h-12 object-contain mr-6 "
+                  alt={`${benefit.title} icon`}
+                  className="w-12 h-12 object-contain mr-6"
                 />
               </div>
               <h3 className="text-3xl mt-5 font-bold mb-2">{benefit.title}</h3>
@@ -120,7 +119,7 @@ const BenefitsTimeline = () => {
         })}
       </motion.div>
 
-      {/* Gear Image (background layer) */}
+      {/* Gear Image */}
       <motion.div
         style={{ y: gearY }}
         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-0 w-full h-full flex justify-center items-end pointer-events-none"
