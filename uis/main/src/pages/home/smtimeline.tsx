@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import tgear from "../../assets/icons/totalgear.png";
 import settings from "../../assets/icons/settings.png";
 import powerb from "../../assets/icons/powerbutton.png";
@@ -33,7 +33,7 @@ const benefits = [
   },
 ];
 
-// Dummy positioning array to use style prop
+// Dummy positioning array
 const positions = [
   { top: "0px", left: "0%" },
   { top: "0px", left: "0%" },
@@ -41,15 +41,16 @@ const positions = [
   { top: "0px", left: "0%" },
 ];
 
-const cardVariants = {
+// ✅ Type-safe card animation
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: (i) => ({
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
       delay: i * 0.2,
       duration: 0.6,
-      type: "spring",
+      type: "spring" as const, // ✅ Fix type error here
     },
   }),
 };
@@ -64,18 +65,17 @@ const Mobiletimeline = () => {
         className="absolute bottom-0 w-full h-[1500px] object-contain z-0"
       />
 
-
-         <div className="text-center font-bold  px-4">
-          <div className="mx-auto leading-tight">
-            <span className="text-white text-5xl">Key </span>
-            <span className="playfair text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white to-white/10">
-              benefits
-            </span>
-          </div>
-          <p className="text-sm font-light text-white opacity-80 mt-2">
-            Why our motors are revolutionary?
-          </p>
+      <div className="text-center font-bold px-4">
+        <div className="mx-auto leading-tight">
+          <span className="text-white text-5xl">Key </span>
+          <span className="playfair text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white to-white/10">
+            benefits
+          </span>
         </div>
+        <p className="text-sm font-light text-white opacity-80 mt-2">
+          Why our motors are revolutionary?
+        </p>
+      </div>
 
       {/* Cards */}
       <div className="relative z-10 flex flex-col items-center gap-10 px-4 pt-[350px]">
@@ -103,12 +103,14 @@ const Mobiletimeline = () => {
               <div className="mb-3 flex items-start">
                 <img
                   src={benefit.icon}
-                  alt={benefit.title + " icon"}
+                  alt={`${benefit.title} icon`}
                   className="w-12 h-12 object-contain mr-6"
                 />
               </div>
               <h3 className="text-3xl mt-5 font-bold mb-2">{benefit.title}</h3>
-              <p className="text-lg mt-5 text-gray-300">{benefit.description}</p>
+              <p className="text-lg mt-5 text-gray-300">
+                {benefit.description}
+              </p>
             </motion.div>
           );
         })}
