@@ -22,10 +22,10 @@ const Card = ({ title, para, img }) => {
 
       {/* Card content */}
       <div className="flex flex-col gap-4 mt-4 text-start items-start">
-        <h1 className="body font-normal text-2xl leading-[140%] tracking-[0%]">
+        <h1 className="body font-normal text-2xl opacity-85 leading-[140%] tracking-[0%]">
           {title}
         </h1>
-        <p className="font-body text-sm leading-[160%] text-gray-700">
+        <p className="font-body text-sm opacity-85 leading-[160%] text-gray-700">
           {para}
         </p>
       </div>
@@ -37,7 +37,8 @@ const Card = ({ title, para, img }) => {
 
 const SmallCard = ({ title, para, img }) => {
   return (
-    <div className="w-full max-w-[320px] bg-[#F9F9F9] relative rounded-md shadow-md px-4 pt-20 pb-6">
+   <div className="w-full max-w-[273px] bg-[#F9F9F9] relative rounded-md shadow-md px-4 pt-20 pb-6">
+
       {/* Floating image */}
       <img
         src={img}
@@ -46,11 +47,11 @@ const SmallCard = ({ title, para, img }) => {
       />
 
       {/* Card content */}
-      <div className="flex flex-col gap-4 mt-4 text-center">
-        <h1 className="font-body font-semibold text-lg leading-[140%]">
+      <div className="flex flex-col w-[209px] gap-4 mt-4 text-center">
+        <h1 className="font-body text-start  font-bold text-lg leading-[140%]">
           {title}
         </h1>
-        <p className="font-body text-sm leading-[160%] text-gray-700">
+        <p className="font-body text-start text-sm leading-[160%] text-gray-700">
           {para}
         </p>
       </div>
@@ -150,22 +151,22 @@ const Technology1 = () => {
        <div className="max-w-[1200px] mx-auto mt-20 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 place-items-center">
           <SmallCard
-            title="Detailed breakdown of energy savings"
+            title="Details about Cipher Energy’s advanced cooling system"
             para="This card explains how axial flux motors improve energy efficiency by minimizing waste and maximizing torque output."
             img={inductor}
           />
           <SmallCard
-            title="Economic impact for businesses: «Save up to 20% on electricity costs»"
+            title="How it enables maximum efficiency in India’s varied climate conditions"
             para="A breakdown of the rotor-stator assembly, showing how the axial alignment leads to compact and powerful design."
             img={inductor}
           />
           <SmallCard
-            title="Environmental impact: «Reduce your carbon footprint by up to 100 kg per MWh»"
+            title="Technical diagrams showing cooling flow"
             para="How our custom cooling system maintains optimal operating temperature to ensure longevity and performance."
             img={inductor}
           />
           <SmallCard
-            title="Contribution to India’s net-zero goal Scope"
+            title="Performance data with and without cooling"
             para="Discover real-world use cases of our axial flux motors across EVs, drones, and industrial automation."
             img={inductor}
           />
@@ -184,31 +185,31 @@ const Technology1 = () => {
       <div className="max-w-[1200px] mx-auto mt-20 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 place-items-center">
           <SmallCard
-            title="Explanation of the technology"
+            title="Detailed breakdown of energy savings"
             para="This card explains how axial flux motors improve energy efficiency by minimizing waste and maximizing torque output."
             img={inductor}
           />
           <SmallCard
-            title="Core Structure"
-            para="A breakdown of the rotor-stator assembly, showing how the axial alignment leads to compact and powerful design."
+            title="Economic impact for businesses: «Save up to 20% on electricity costs»"
+            para="A breakdown of the rotor-stator assembly, showing how the axial "
             img={inductor}
           />
           <SmallCard
-            title="Thermal Management"
-            para="How our custom cooling system maintains optimal operating temperature to ensure longevity and performance."
+            title="Environmental impact: «Reduce your carbon footprint by up to 100 kg per MWh»"
+            para="How our custom cooling system maintains optimal ."
             img={inductor}
           />
           <SmallCard
-            title="Application Scope"
+            title="Contribution to India’s net-zero goals"
             para="Discover real-world use cases of our axial flux motors across EVs, drones, and industrial automation."
             img={inductor}
           />
         </div>
 
         <div className="flex justify-center mb-15">
-          <div className="bg-[#F9F9F9] relative mt-10 mb-5 rounded-md shadow-md px-4 pt-20 pb-6 w-[352px] h-[320px] sm:w-[352px] sm:h-[320px] md:w-[586px] md:h-[250px]">
+          <div className="bg-[#F9F9F9] relative mt-10 mb-5 rounded-md shadow-md px-4 pt-20 pb-6 max-w-[506px] h-[320px] sm:w-[352px] sm:h-[320px] md:w-[586px] md:h-[250px]">
             <div className="flex flex-col gap-4 text-center">
-              <h1 className="font-body font-semibold text-lg leading-[140%]">
+              <h1 className="font-body  font-bold text-lg leading-[140%]">
                 ROI calculator tool
               </h1>
               <p className="font-body text-sm leading-[160%] text-gray-700">

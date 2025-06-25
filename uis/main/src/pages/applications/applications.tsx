@@ -95,7 +95,7 @@ const Apps = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="w-full relative min-h-[613px] bg-gradient-to-b from-[#ffffff] to-[#074FF7] overflow-x-hidden">
+      <div className="w-full relative min-h-[613px] bg-[linear-gradient(to_bottom,_#ffffff_40%,_#074FF7_100%)] overflow-x-hidden">
         <div className="flex flex-col items-center py-20">
           <em className="playfair font-title text-[32px] md:text-[64px] italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent text-center pt-10 font-black">
             Applications
@@ -105,20 +105,22 @@ const Apps = () => {
           </p>
         </div>
 
-          <div className="mt-20 px-4 sm:px-6 lg:px-8">
-        <div className="flex overflow-x-auto whitespace-nowrap gap-9 max-w-[1300px] mx-auto hide-scrollbar">
-          {applicationCards.map((card, idx) => (
-            <div
-              key={idx}
-              className="flex-shrink-0 flex flex-col items-center mb-5 w-[100px] sm:w-[120px] md:w-[140px] lg:w-[152px]"
-            >
-              <div className="w-full aspect-square rounded-md bg-white/20 flex items-center justify-center hover:bg-opacity-30 transition-all">
-                {/* Placeholder for icon/image */}
-              </div>
-              <h1 className="mt-2 text-center font-body text-white text-lg font-medium">{card}</h1>
-            </div>
-          ))}
+          <div className=" px-4 sm:px-6 lg:px-8 flex justify-center">
+       <div className="w-[1200px] h-[187px] flex overflow-x-auto whitespace-nowrap gap-4 hide-scrollbar">
+    {applicationCards.map((card, idx) => (
+      <div
+        key={idx}
+        className="flex-shrink-0 flex flex-col items-center w-[100px] sm:w-[120px] md:w-[140px] lg:w-[152px]"
+      >
+        <div className="w-full aspect-square rounded-md bg-white/20 flex items-center justify-center hover:bg-opacity-30 transition-all">
+          {/* Placeholder for icon/image */}
         </div>
+        <h1 className="mt-2 text-center opacity-55 text-nowrap font-body text-white text-lg font-medium">
+          {card}
+        </h1>
+      </div>
+    ))}
+  </div>
       </div>
       </div>
 
@@ -152,7 +154,7 @@ const Apps = () => {
           <div className="flex flex-col pb-20 mt-10 gap-12 items-center w-full">
             <h1 className="text-[#020C22] text-xl font-normal">Recommended Models</h1>
             
-         <div className="flex flex-col pb-20 mt-15 gap-10 items-center w-full">
+         <div className="flex flex-col pb-20 mt-15 gap-10 items-center w-[1200px]">
              <Cards title="CEM1" productId="cem1" />
 
             </div>

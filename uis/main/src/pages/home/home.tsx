@@ -49,7 +49,7 @@ const CHome = () => {
     }}
   >
 
-        <div className="flex flex-col items-center w-full  py-20">
+        <div className="flex flex-col items-center w-full  py-20">a
           <Hero />
         </div>
 

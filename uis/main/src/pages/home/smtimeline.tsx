@@ -1,122 +1,95 @@
-import React from "react";
-import { motion, Variants } from "framer-motion";
-import tgear from "../../assets/icons/totalgear.png";
-import settings from "../../assets/icons/settings.png";
-import powerb from "../../assets/icons/powerbutton.png";
-import energy from "../../assets/icons/leafw.png";
-import power from "../../assets/icons/energyw.png";
+import React, { useRef, useEffect } from "react";
+import { useScroll, useTransform } from "framer-motion";
+import leaficon from "../../assets/images/leaficon.png";
+import gearanimation from "/videos/gearanimation.mp4";
+import { Link } from "react-router-dom";
 
-const benefits = [
-  {
-    title: "Superior Efficiency",
-    description:
-      "Our module optimizes the DC discharge cycle, saving customers money by reducing heat loss effects or energy costs",
-    icon: power,
-  },
-  {
-    title: "Unmatched Power Density",
-    description:
-      "Features continuous power-to-weight ratio available in the Indian market",
-    icon: powerb,
-  },
-  {
-    title: "Streamlined Manufacturing",
-    description:
-      "Our production process offers manufacturing time without compromising quality",
-    icon: settings,
-  },
-  {
-    title: "Environmental Impact",
-    description:
-      "Reduces CO2 emissions by up to 150 kg per MWh of energy consumed",
-    icon: energy,
-  },
-];
+const Hero = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-// Dummy positioning array
-const positions = [
-  { top: "0px", left: "0%" },
-  { top: "0px", left: "0%" },
-  { top: "0px", left: "0%" },
-  { top: "0px", left: "0%" },
-];
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
 
-// ✅ Type-safe card animation
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      type: "spring" as const, // ✅ Fix type error here
-    },
-  }),
-};
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (progress) => {
+      const video = videoRef.current;
+      if (video && video.duration) {
+        video.currentTime = progress * video.duration;
+      }
+    });
 
-const Mobiletimeline = () => {
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
-    <div className="relative w-full h-[2245px]">
-      {/* Gear image in background */}
-      <img
-        src={tgear}
-        alt="Gear"
-        className="absolute bottom-0 w-full h-[1500px] object-contain z-0"
-      />
-
-      <div className="text-center font-bold px-4">
-        <div className="mx-auto leading-tight">
-          <span className="text-white text-5xl">Key </span>
-          <span className="playfair text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white to-white/10">
-            benefits
-          </span>
+    <>
+      <div className="w-full max-w-[1004px] px-4 py-6 md:py-8 mx-auto flex flex-col items-center justify-center gap-4 md:gap-6">
+        {/* small content */}
+        <div className="flex items-center gap-2 md:gap-3 bg-blue-100 rounded-3xl px-2 md:px-3">
+          <img src={leaficon} alt="icon" className="w-5 h-5 md:w-6 md:h-6" />
+          <p className="text-xs text-black font-medium">
+            Saving ₹800+ Billion in Energy Losses While Reducing Carbon Emissions.
+          </p>
         </div>
-        <p className="text-sm font-light text-white opacity-80 mt-2">
-          Why our motors are revolutionary?
-        </p>
+
+        {/* heading */}
+        <div className="w-full max-w-[870px]">
+          <h1 className="text-center leading-[100%] font-extrabold">
+            <em className="playfair bg-gradient-to-r text-[32px] md:text-[48px] lg:text-[64px] tracking-[-0.02em] from-black to-[#074FF7] bg-clip-text text-transparent italic">
+              Revolutionary
+            </em>{" "}
+            <span className="body font-medium text-[32px] md:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.02em] text-center">
+              Axial Flux
+            </span>
+            <br className="hidden sm:block" />
+            <span className="body font-medium text-[32px] md:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.02em] text-center">
+              Electric Motors for India's
+            </span>
+            <br className="hidden sm:block" />
+            <span className="body font-medium text-[32px] md:text-[48px] lg:text-[64px] leading-[100%] tracking-[-0.02em] text-center">
+              Energy
+            </span>{" "}
+            <em className="playfair bg-gradient-to-r font-['Playfair'] text-[32px] md:text-[48px] lg:text-[64px] tracking-[-0.02em] from-black to-[#074FF7] bg-clip-text text-transparent italic">
+              Future.
+            </em>
+          </h1>
+        </div>
+
+        {/* buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 mb-5 sm:gap-8 w-full sm:w-auto">
+          <Link
+            to="./contactus"
+            className="flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-[128px] h-[40px] rounded-sm
+            bg-gradient-to-tr from-[#020919] via-[#074FF7] via-40% via-[#6384E9] to-[#020919]
+            text-white transition"
+          >
+            REQUEST DEMO
+          </Link>
+          <Link
+            to="./products"
+            className="flex justify-center items-center text-xs sm:text-sm font-semibold w-[187px] sm:w-auto px-6 h-[40px] rounded-md border-2 border-[#074FF7] transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]"
+          >
+            EXPLORE PRODUCTS
+          </Link>
+        </div>
       </div>
 
-      {/* Cards */}
-      <div className="relative z-10 flex flex-col items-center gap-10 px-4 pt-[350px]">
-        {benefits.map((benefit, index) => {
-          const position = positions[index];
-          return (
-            <motion.div
-              key={index}
-              className="bg-gray-800 text-white p-6 rounded-lg shadow-lg"
-              custom={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={cardVariants}
-              style={{
-                top: position.top,
-                left: position.left,
-                transform: position.left.includes("%")
-                  ? "translateX(-50%)"
-                  : "none",
-                width: "350px",
-                height: "300px",
-              }}
-            >
-              <div className="mb-3 flex items-start">
-                <img
-                  src={benefit.icon}
-                  alt={`${benefit.title} icon`}
-                  className="w-12 h-12 object-contain mr-6"
-                />
-              </div>
-              <h3 className="text-3xl mt-5 font-bold mb-2">{benefit.title}</h3>
-              <p className="text-lg mt-5 text-gray-300">
-                {benefit.description}
-              </p>
-            </motion.div>
-          );
-        })}
+      {/* scroll synced video */}
+      <div ref={containerRef} className="w-full overflow-hidden min-h-[100vh]">
+        <video
+          ref={videoRef}
+          src={gearanimation}
+          className="mx-auto transform w-full max-w-[900px] object-contain"
+          playsInline
+          muted
+          preload="auto"
+        />
       </div>
-    </div>
+    </>
   );
 };
 
-export default Mobiletimeline;
+export default Hero;
