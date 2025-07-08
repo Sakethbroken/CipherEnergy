@@ -14,6 +14,7 @@ import massicon from "../../assets/images/massicon.png"
 import continuouspowericon from "../../assets/images/continouspowericon.png"
 import continuoustorqueicon from "../../assets/images/conttorque.png"
 import energysavingscon from "../../assets/images/energyicon.png"
+import ScrollVideo from "@/components/ScrollControlledVideo.tsx";
 
 const cemSeries1Data = [
   { id: 1, active: true, icon: powericon, value: "130 kW", description: "Peak Power" },
@@ -53,6 +54,10 @@ const CHome = () => {
           <Hero />
         </div>
 
+        <div>
+          <ScrollVideo/>
+        </div>
+
    
           
             <div className="w-[398px] h-[137px] mx-auto items-center justify-center max-w-[768px] gap-[14px]">
@@ -69,6 +74,7 @@ const CHome = () => {
                 Why our motors are revolutionary?
                 </p>
             </div>
+
 
     
   

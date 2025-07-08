@@ -12,6 +12,7 @@ import Apps1 from "./applications";
 import Customization from "./custom/custom";
 import ScrollToTop from "../scrolltotop"; // ✅ Make sure this path is correct
 import { useRef } from "react";
+import ScrollVideo from "@/components/ScrollControlledVideo.tsx";
 
 
 const Pages = () => {
@@ -31,7 +32,7 @@ return (
           <Route path="/resources" element={<Resourcepage />} />
           <Route path="/applications" element={<Apps1 />} />
           <Route path="/customization" element={<Customization />} />
-          
+          <Route path="/video" element={<ScrollVideo/>}/>
         </Routes>
       </div>
     </>
