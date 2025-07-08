@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <div className="w-full relative min-h-[613px] bg-[linear-gradient(to_bottom,_#ffffff_40%,_#074FF7_100%)]">
       <div className="flex flex-col justify-center items-center py-20">
-        <div className=" flex justify-center w-[578px]">
+        <div className=" flex justify-center">
           <span className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] font-bold italic bg-gradient-to-r from-[#031a4f] to-[#074FF7] bg-clip-text text-transparent text-center pt-10">
             Products
           </span>

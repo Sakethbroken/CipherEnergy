@@ -31,7 +31,6 @@ return (
           <Route path="/resources" element={<Resourcepage />} />
           <Route path="/applications" element={<Apps1 />} />
           <Route path="/customization" element={<Customization />} />
-          
         </Routes>
       </div>
     </>
