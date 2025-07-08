@@ -104,7 +104,8 @@ const Aboutpage = () => {
 
       {/* Footer */}
       <div className="w-full">
-        <Footer2 />
+        <Footer2 hideMissionSection />
+
         <Footer1 />
       </div>
     </div>
