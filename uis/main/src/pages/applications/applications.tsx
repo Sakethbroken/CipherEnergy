@@ -79,7 +79,7 @@ const Apps = () => {
       {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-white to-[#074FF7] min-h-[613px] flex flex-col items-center py-20">
+      ``````<div className="bg-gradient-to-b from-white/50 to-[#074FF7] min-h-[613px] flex flex-col items-center py-20">``````
         <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent font-black text-center">
           Applications
         </em>
