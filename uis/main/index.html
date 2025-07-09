@@ -1,23 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- React Fast Refresh Setup (Vite Dev Only) -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ Title & Meta Description -->
+    <title>CIPHERENERGY</title>
+    <meta name="description" content="High-efficiency axial flux motors revolutionizing the EV and industrial landscape.">
+
+    <!-- ✅ Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- ✅ Vite Dev: Fast Refresh (only works in dev mode) -->
     <script type="module">
         import { injectIntoGlobalHook } from "/@react-refresh"; injectIntoGlobalHook(window); window.$RefreshReg$ = () => {}; window.$RefreshSig$ = () => (type) => type;
     </script>
 
     <script type="module" src="/@vite/client"></script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>CIPHERENERGY</title>
-    <meta name="description" content="CipherEnergy is revolutionizing electric motors with high-efficiency axial flux technology for industries like aerospace, EVs, and more." />
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
-
-    <!-- Relay JS Request -->
+    <!-- ✅ Relay JS (optional, used if you're expecting injected scripts) -->
     <script>
         const send_message = (data) => {
             if (window && window.parent && typeof window.parent.postMessage === "function") {
@@ -31,7 +33,6 @@
         });
 
         const listen_msg = (e) => {
-            console.log("Listening for messages in the script tag", e);
             const data = e.data;
             if (data.type === "relay_js" && data.code) {
                 try {
@@ -40,8 +41,8 @@
                     s.text = data.code;
                     document.head.appendChild(s);
                     console.log("Relay JS injected successfully.");
-                } catch (error) {
-                    console.error("Error injecting relay JS", error);
+                } catch (err) {
+                    console.error("Error injecting relay JS", err);
                 }
                 window.removeEventListener("message", listen_msg);
             }
