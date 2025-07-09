@@ -8,6 +8,8 @@ import Footer2 from "../footer2";
 import ImageCarousel from "./swiper";
 import BenefitsTimeline from "./timeline";
 import Mobiletimeline from "./smtimeline";
+import ScrollVideo from "@/components/ScrollControlledVideo.tsx";
+
 import powericon from "../../assets/images/powericon.png";
 import torqueicon from "../../assets/images/peaktorque.png";
 import massicon from "../../assets/images/massicon.png";
@@ -35,7 +37,7 @@ const CHome = () => {
 
       {/* Gradient Section */}
       <div
-        className="relative w-full overflow-x-hidden flex flex-col rounded-lg gap-4 "
+        className="relative w-full overflow-x-hidden flex flex-col rounded-lg gap-4"
         style={{
           background: "linear-gradient(to bottom, #FFFFFF 10%, #074FF7 30%, #000000 85%)",
         }}
@@ -45,11 +47,29 @@ const CHome = () => {
           <Hero />
         </div>
 
-        {/* Benefits Heading */}
-       
+        {/* Scroll Synced Video Section */}
+        <div>
+          <ScrollVideo />
+        </div>
+
+        {/* Key Benefits Heading */}
+    <div className="hidden sm:flex flex-col w-[398px] h-[137px] mx-auto items-center justify-center max-w-[768px] gap-[14px]">
+  <div className="w-[398px] flex items-center justify-center gap-3 h-[96px]">
+    <span className="title text-center text-6xl text-white font-[700] leading-[100%] tracking-[-0.02em] font-title">
+      Key
+    </span>
+    <span className="playfair font-black italic text-6xl text-center leading-[100%] tracking-[-0.02em] bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent">
+      benefits
+    </span>
+  </div>
+  <p className="font-body text-white font-normal text-sm leading-[20px] text-center">
+    Why our motors are revolutionary?
+  </p>
+</div>
+
 
         {/* Timeline Section */}
-        <div className="w-full relative">
+        <div className="w-screen relative">
           <div className="hidden lg:block">
             <BenefitsTimeline />
           </div>

@@ -2,60 +2,59 @@
 <html lang="en">
 
 <head>
+    <!-- React Fast Refresh Setup -->
+    <script type="module">
+        import { injectIntoGlobalHook } from "/@react-refresh"; injectIntoGlobalHook(window); window.$RefreshReg$ = () => {}; window.$RefreshSig$ = () => (type) => type;
+    </script>
+
+    <script type="module" src="/@vite/client"></script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>App 1</title>
-    <link href="/src/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="/src/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
 
-
-    <!-- RELAY JS -->
+    <!-- Relay JS Request -->
     <script>
-        const send_message = (data) =>
-            window.parent.parent ? window.parent.postMessage(data, '*') : null;
-
-        const tim = setInterval(() => {
-            // const GFN = window.GFN;
-            // if(!GFN){
-            //     console.log("WAITING FOR GFN TO BE LOADED BEFORE REQUESTING RELAY JS");
-            //     return;
-            // }
-            console.log("REQUESTING RELAY JS");
-            const data = {
-                type: "req_for_relay_js"
+        const send_message = (data) => {
+            if (window && window.parent && typeof window.parent.postMessage === "function") {
+                window.parent.postMessage(data, "*");
             }
-            send_message(data);
-        }, 1000);
+        };
+
+
+
+        console.log("REQUESTING RELAY JS");
+        send_message({
+            type: "req_for_relay_js"
+        });
 
         const listen_msg = (e) => {
-            console.log('listening for messages in the script tag', e);
+            console.log("Listening for messages in the script tag", e);
             const data = e.data;
-            if (data.type === 'relay_js') {
-                const code = data.code;
-                if (code) {
-                    // console.log("relay js", code);
-                    clearInterval(tim);
-                    window.removeEventListener("message", listen_msg);
-
-                    try {
-                        const s = document.createElement("script");
-                        s.id = "relay-js";
-                        s.text = code;
-                        document.head.append(s);
-                    } catch (error) {
-                        console.log("error while adding relay js", error);
-                    }
+            if (data.type === "relay_js" && data.code) {
+                try {
+                    const s = document.createElement("script");
+                    s.id = "relay-js";
+                    s.text = data.code;
+                    document.head.appendChild(s);
+                    console.log("Relay JS injected successfully.");
+                } catch (error) {
+                    console.error("Error injecting relay JS", error);
                 }
+                window.removeEventListener("message", listen_msg);
             }
+        };
 
-        }
-        window.addEventListener('message', listen_msg);
+        window.addEventListener("message", listen_msg);
     </script>
+
 </head>
 
 <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx?t=1751971867390"></script>
 </body>
 
 </html>
