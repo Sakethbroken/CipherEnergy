@@ -12,20 +12,20 @@
     <!-- ✅ Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- ✅ Vite Dev: Fast Refresh (only works in dev mode) -->
+    <!-- ✅ Vite Dev: Fast Refresh (dev-only) -->
     <script type="module">
         import { injectIntoGlobalHook } from "/@react-refresh"; injectIntoGlobalHook(window); window.$RefreshReg$ = () => {}; window.$RefreshSig$ = () => (type) => type;
     </script>
 
     <script type="module" src="/@vite/client"></script>
 
-    <!-- ✅ Relay JS (optional, used if you're expecting injected scripts) -->
+    <!-- ✅ Relay JS Injection (Optional) -->
     <script>
         const send_message = (data) => {
             if (window && window.parent && typeof window.parent.postMessage === "function") {
                 window.parent.postMessage(data, "*");
             }
-        };
+        }
 
         console.log("REQUESTING RELAY JS");
         send_message({
