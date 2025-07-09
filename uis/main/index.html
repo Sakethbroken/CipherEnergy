@@ -1,25 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
+    <!-- React Fast Refresh Setup -->
+    <script type="module">
+        import { injectIntoGlobalHook } from "/@react-refresh"; injectIntoGlobalHook(window); window.$RefreshReg$ = () => {}; window.$RefreshSig$ = () => (type) => type;
+    </script>
+
+    <script type="module" src="/@vite/client"></script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- ✅ Correct title and meta tags -->
     <title>CIPHERENERGY</title>
-    <meta name="description" content="High-efficiency axial flux motors revolutionizing the EV and industrial landscape.">
 
-    <!-- ✅ Google Fonts -->
+    <!-- ✅ Added description -->
+    <meta name="description" content="CipherEnergy develops high-efficiency axial flux motors to power the future of electric mobility and industrial applications." />
+
+    <link href="/src/styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- ❌ Removed direct /src/styles.css link (Vite handles it in build) -->
+    <!-- Relay JS Request -->
+    <script>
+        const send_message = (data) => {
+            if (window && window.parent && typeof window.parent.postMessage === "function") {
+                window.parent.postMessage(data, "*");
+            }
+        };
+
+        console.log("REQUESTING RELAY JS");
+        send_message({
+            type: "req_for_relay_js"
+        });
+
+        const listen_msg = (e) => {
+            console.log("Listening for messages in the script tag", e);
+            const data = e.data;
+            if (data.type === "relay_js" && data.code) {
+                try {
+                    const s = document.createElement("script");
+                    s.id = "relay-js";
+                    s.text = data.code;
+                    document.head.appendChild(s);
+                    console.log("Relay JS injected successfully.");
+                } catch (error) {
+                    console.error("Error injecting relay JS", error);
+                }
+                window.removeEventListener("message", listen_msg);
+            }
+        };
+
+        window.addEventListener("message", listen_msg);
+    </script>
 </head>
 
 <body>
     <div id="root"></div>
-
-    <!-- ✅ Main entrypoint handled by Vite -->
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx?t=1751971867390"></script>
 </body>
 
 </html>
