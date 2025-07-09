@@ -5,55 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- ✅ Title & Meta Description -->
+    <!-- ✅ Correct title and meta tags -->
     <title>CIPHERENERGY</title>
     <meta name="description" content="High-efficiency axial flux motors revolutionizing the EV and industrial landscape.">
 
-    <!-- ✅ Fonts -->
+    <!-- ✅ Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- ✅ Vite Dev: Fast Refresh (dev-only) -->
-    <script type="module">
-        import { injectIntoGlobalHook } from "/@react-refresh"; injectIntoGlobalHook(window); window.$RefreshReg$ = () => {}; window.$RefreshSig$ = () => (type) => type;
-    </script>
-
-    <script type="module" src="/@vite/client"></script>
-
-    <!-- ✅ Relay JS Injection (Optional) -->
-    <script>
-        const send_message = (data) => {
-            if (window && window.parent && typeof window.parent.postMessage === "function") {
-                window.parent.postMessage(data, "*");
-            }
-        }
-
-        console.log("REQUESTING RELAY JS");
-        send_message({
-            type: "req_for_relay_js"
-        });
-
-        const listen_msg = (e) => {
-            const data = e.data;
-            if (data.type === "relay_js" && data.code) {
-                try {
-                    const s = document.createElement("script");
-                    s.id = "relay-js";
-                    s.text = data.code;
-                    document.head.appendChild(s);
-                    console.log("Relay JS injected successfully.");
-                } catch (err) {
-                    console.error("Error injecting relay JS", err);
-                }
-                window.removeEventListener("message", listen_msg);
-            }
-        };
-
-        window.addEventListener("message", listen_msg);
-    </script>
+    <!-- ❌ Removed direct /src/styles.css link (Vite handles it in build) -->
 </head>
 
 <body>
     <div id="root"></div>
+
+    <!-- ✅ Main entrypoint handled by Vite -->
     <script type="module" src="/src/main.tsx"></script>
 </body>
 
