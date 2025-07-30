@@ -13,8 +13,10 @@ const Footer1 = () => {
         <div className="grid w-full md:w-[544px] grid-cols-2 sm:grid-cols-4 gap-3 text-white text-sm mb-8 md:mb-0">
           <div className="flex flex-col gap-2">
             <h4 className="font-semibold pb-1">Products</h4>
-            <button className="text-left hover:text-blue-300 cursor-pointer">Lorem ipsum</button>
-            <button className="text-left hover:text-blue-300 cursor-pointer">Lorem ipsum</button>
+         <Link to="/cem1" className="text-left hover:text-blue-300 cursor-pointer">Product 1</Link>
+<Link to="/cem2" className="text-left hover:text-blue-300 cursor-pointer">Product 2</Link>
+<Link to="/cem3" className="text-left hover:text-blue-300 cursor-pointer">Product 3</Link>
+
           </div>
           <div className="flex flex-col gap-2">
             <h4 className="font-semibold w-fit pb-1 cursor-pointer">Resources</h4>

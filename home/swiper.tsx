@@ -45,7 +45,7 @@ const ImageCarousel = () => {
 
   return (
     <div className="w-full relative py-8 md:py-16" style={{
-      background: "linear-gradient(to bottom, #F4F4F4, #F1F8FF, #88A3A1, #DEE1F0, #7D7C8C, #FFFFFF)",
+      background: "linear-gradient(to bottom, #020919, #003546, #008A84, #002B40, #001833)",
     }}>
       {/* Title Section */}
       <div className="text-center flex flex-col mb-6 md:mb-12 px-4">

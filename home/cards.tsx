@@ -6,7 +6,7 @@ const Cards = ({ title, isImageRight = false, cardData }) => {
   return (
     <div className="flex flex-col items-center gap-4 mt-15 md:gap-6 px-4 md:px-6">
       {/* Title */}
-      <h2 className=" w-[254px] text-2xl text-nowrap md:text-3xl lg:text-4xl font-bold opacity-75 text-center mb-6  h-[48px]">
+      <h2 className=" w-[254px] text-2xl text-white text-nowrap md:text-3xl lg:text-4xl font-bold opacity-75 text-center mb-6  h-[48px]">
         {title}
       </h2>
 
@@ -26,24 +26,25 @@ const Cards = ({ title, isImageRight = false, cardData }) => {
         </div>
 
         {/* Grid */}
-        <div className="w-full md:w-1/2 md:max-w-[582px] flex-shrink-0 grid grid-cols-3 gap-2 sm:gap-3">
+        <div className="w-full md:w-1/2 md:max-w-[582px] flex-shrink-0 grid grid-cols-3 gap-1 xs:gap-2 sm:gap-3 justify-items-center">
           {cardData.map((item) => (
             <div
               key={item.id}
-              className={`aspect-square max-w-[178px] h-[242px] w-full rounded-3xl flex flex-col items-center ${
-                item.active ? "bg-white shadow-xl" : "bg-gray-200"
+              className={`w-[100px] h-[150px] xs:w-[112px] xs:h-[167px] sm:aspect-square sm:max-w-[178px] sm:h-[242px] sm:w-full rounded-3xl flex flex-col items-center ${
+                item.active ? "bg-[#6384E966] shadow-xl" : "bg-[#6384E933]"
+
               }`}
             >
-              <div className="mt-8 mb-auto ">
+              <div className="mt-4 xs:mt-6 sm:mt-8 mb-auto flex justify-center">
                 <img
                   src={item.icon}
                   alt={`${item.title} icon`}
-                  className=""
+                  className="w-6 h-6 xs:w-8 xs:h-8 sm:w-auto sm:h-auto"
                 />
               </div>
-              <div className="mb-4 flex flex-col  gap-3">
-                <div className="font-bold text-xl">{item.value}</div>
-                <div className="text-gray-500 text-md">
+              <div className="mb-2 xs:mb-3 sm:mb-4 flex flex-col gap-1 xs:gap-2 sm:gap-3 px-2 text-center">
+                <div className="font-bold text-white text-sm xs:text-base sm:text-xl">{item.value}</div>
+                <div className="text-gray-500 worksans text-sm xs:text-sm sm:text-md">
                   {item.description}
                 </div>
               </div>

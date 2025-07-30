@@ -68,7 +68,7 @@ const Technology1 = () => {
 
   return (
     <>
-    <div className="w-full">
+    <div className="w-full bg-[linear-gradient(to_bottom,_#020919,_#000C28,_#000416,_#000820,_#00092E,_#000523,_#0944CF)]">
       <Header onHamburgerClick={toggleSidebar} />
       {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
 
@@ -77,11 +77,11 @@ const Technology1 = () => {
       {/* Heading section */}
    <div className="w-full px-4 mx-auto pt-20 pb-20 mt-40">
   <div className="flex flex-col gap-3 text-center">
-    <span className="playfair font-title text-[32px] md:text-[64px] w-[768px] mx-auto leading-tight tracking-[-0.02em] font-black italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent">
+    <span className="playfair font-title text-[32px] md:text-[64px] w-[768px] mx-auto leading-tight tracking-[-0.02em] font-black italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent">
   Technical Considerations
 </span>
 
- <p className="mt-5 font-body font-normal text-2xl leading-[140%] tracking-normal text-center w-[768px] mx-auto">
+ <p className="mt-5 font-body text-white font-normal text-2xl leading-[140%] tracking-normal text-center w-[768px] mx-auto">
   Cipher Energy has developed cutting-edge axial flux motors that significantly reduce the 10–20% energy
   waste in traditional motors.
 </p>
@@ -206,7 +206,7 @@ const Technology1 = () => {
           />
         </div>
 
-        <div className="flex justify-center mb-15">
+        <div className="flex justify-center ">
           <div className="bg-[#F9F9F9] relative mt-10 mb-5 rounded-md shadow-md px-4 pt-20 pb-6 max-w-[506px] h-[320px] sm:w-[352px] sm:h-[320px] md:w-[586px] md:h-[250px]">
             <div className="flex flex-col gap-4 text-center">
               <h1 className="font-body  font-bold text-lg leading-[140%]">

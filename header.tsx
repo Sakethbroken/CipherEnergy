@@ -12,7 +12,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({
   onHamburgerClick,
-  bgcolor = "bg-gray-200",
+  bgcolor = "bg-[#020919]",
   highlightOnClick = false,
 }) => {
   const location = useLocation();
@@ -49,12 +49,16 @@ const Header: React.FC<HeaderProps> = ({
             return (
               <MenubarMenu key={label}>
                 <Link to={path}>
-                  <MenubarTrigger
-                    className={`text-sm cursor-pointer text-nowrap font-medium transition-none ${activeTextColor} 
-                      hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent`}
-                  >
-                    {label}
-                  </MenubarTrigger>
+<MenubarTrigger
+  className={`nav-link worksans whitespace-nowrap ${activeTextColor} 
+    hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent`}
+>
+  {label}
+</MenubarTrigger>
+
+
+
+
                 </Link>
               </MenubarMenu>
             );
@@ -65,19 +69,20 @@ const Header: React.FC<HeaderProps> = ({
       {/* Right side */}
       <div className="flex items-center pr-2 sm:pr-4 md:pr-20">
         <Link
-          to="/contactus"
-          className={`text-white text-sm cursor-pointer font-bold w-[128px] py-2 px-2 rounded-sm
-            bg-gradient-to-tr flex justify-center items-center from-[#020919] via-[#074FF7] via-40% via-[#6384E9] to-[#020919]
-            transition hidden lg:block font-['Inter'] text-[14px] leading-[27px] uppercase`}
-        >
-          REQUEST DEMO
-        </Link>
+  to="/contactus"
+  className="holographic-link"
+>
+  REQUEST DEMO
+</Link>
 
         {/* Hamburger - visible on mobile */}
         <div className="block lg:hidden p-2 b`g-transparent">
-          <button onClick={onHamburgerClick}>
+          <button  onClick={onHamburgerClick}>
             <Menu className="h-6 w-6 text-gray-800" />
           </button>
+
+
+          
         </div>
       </div>
     </div>
