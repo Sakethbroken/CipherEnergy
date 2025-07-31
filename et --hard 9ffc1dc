@@ -1,0 +1,87 @@
+[33mca7741f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mrebased-version[m[33m, [m[1;31morigin/rebased-version[m[33m)[m HEAD@{0}: pull origin rebased-version --rebase: Fast-forward
+[33m7fd815f[m HEAD@{1}: reset: moving to 7fd815f
+[33m9ffc1dc[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{2}: checkout: moving from rebased-version to rebased-version
+[33m9ffc1dc[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{3}: checkout: moving from master to rebased-version
+[33m9ffc1dc[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{4}: commit: changes made
+[33m72b4fb0[m[33m ([m[1;31morigin/master[m[33m)[m HEAD@{5}: commit: added descriptions
+[33m24e6a91[m HEAD@{6}: commit: added description
+[33m7e8a6cf[m HEAD@{7}: commit: added description and image
+[33m9a5f466[m HEAD@{8}: commit: fixed issues meta
+[33mafd78eb[m HEAD@{9}: commit: added meta changes3
+[33m521cca5[m HEAD@{10}: commit: added meta changes 2
+[33m48f708c[m HEAD@{11}: commit: added meta changes
+[33m8f49b5e[m HEAD@{12}: commit: added meta description
+[33m28278c6[m HEAD@{13}: commit: changhes
+[33m595f05f[m HEAD@{14}: commit: changes
+[33m8d6e171[m HEAD@{15}: commit (merge): meta tags
+[33m494947c[m HEAD@{16}: checkout: moving from main to master
+[33m9e2d0e0[m[33m ([m[1;31morigin/rohit[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mrohit[m[33m, [m[1;32mmain[m[33m)[m HEAD@{17}: pull origin rohit: Fast-forward
+[33mfc0f81b[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m HEAD@{18}: checkout: moving from master to main
+[33m494947c[m HEAD@{19}: reset: moving to HEAD
+[33m494947c[m HEAD@{20}: commit: commit before rohit pull
+[33m6ece535[m HEAD@{21}: commit: footer changes
+[33m074d76d[m HEAD@{22}: commit: animatiomn changes
+[33m018c518[m HEAD@{23}: commit: timeline issue fixed
+[33mfad3f66[m HEAD@{24}: commit: sm timeline issue resolved
+[33m8a446b1[m HEAD@{25}: commit: formatting changes
+[33mc88aee5[m HEAD@{26}: commit: backend functionality and header changes
+[33m4b12a9a[m HEAD@{27}: commit: addded backend functionality
+[33m7fd815f[m HEAD@{28}: reset: moving to 7fd815f
+[33m7fd815f[m HEAD@{29}: commit: fixed import namechanges
+[33m621c0de[m HEAD@{30}: commit: peak1 icon namechange
+[33m244d60a[m HEAD@{31}: commit: peak icon namechange
+[33m792f344[m HEAD@{32}: commit: mass icon namechange
+[33mbbbf12d[m HEAD@{33}: commit: chaanges image names
+[33mfa0d300[m HEAD@{34}: commit: changed iamges
+[33m316ce82[m HEAD@{35}: commit: revert changes
+[33mefe0d7b[m HEAD@{36}: checkout: moving from master to master
+[33mefe0d7b[m HEAD@{37}: commit: bluemoon
+[33me32b975[m HEAD@{38}: commit: vite update
+[33m1bf89f1[m HEAD@{39}: commit: image update
+[33mb0fcd57[m HEAD@{40}: commit: vite file update
+[33me187bad[m HEAD@{41}: commit: cipher image
+[33mc1611ce[m HEAD@{42}: commit: indiamap image
+[33m9708952[m HEAD@{43}: commit: custom image
+[33me0f18dd[m HEAD@{44}: commit: fixed import ASSETS
+[33mbdbd51c[m HEAD@{45}: commit: images moved to the public folder
+[33me1917da[m HEAD@{46}: commit: removed person1 image
+[33md2109a9[m HEAD@{47}: commit: removed au image
+[33m0da4337[m HEAD@{48}: commit: absolute path set
+[33m3d99560[m HEAD@{49}: commit: about us src
+[33mfe8dd2f[m HEAD@{50}: commit: about us src issue
+[33mcf53c98[m HEAD@{51}: commit: removed preinstall script
+[33m815ef53[m HEAD@{52}: commit: usimg react 19
+[33m9300626[m HEAD@{53}: commit: removed package lock
+[33meccc17f[m HEAD@{54}: commit: unused components
+[33m166de91[m HEAD@{55}: commit: downgraded react
+[33mb1fa59c[m HEAD@{56}: commit: 123
+[33m085e84b[m HEAD@{57}: commit: changes
+[33ma7d4d56[m HEAD@{58}: commit (merge): Merge branch 'master' of https://github.com/Sakethbroken/CipherEnergy
+[33m5fe0ecf[m HEAD@{59}: rebase (abort): returning to refs/heads/master
+[33m5d1bcae[m HEAD@{60}: commit: changes 1
+[33m1e0dd58[m HEAD@{61}: pull origin master --rebase (start): checkout 1e0dd58f515e7f43aac35cfc641ab082f0e5974d
+[33m5fe0ecf[m HEAD@{62}: commit: minor changes
+[33m81cd40e[m HEAD@{63}: commit: lucide react
+[33mf62d47f[m HEAD@{64}: commit: minor changes
+[33maa6fca8[m HEAD@{65}: commit: removed dependencies
+[33m76aac7f[m HEAD@{66}: commit: downgraded react
+[33m5fd377c[m HEAD@{67}: commit: downgraded react
+[33md7523e7[m HEAD@{68}: commit (merge): removed conflict
+[33m9a83f2b[m HEAD@{69}: pull origin master: Fast-forward
+[33m825ccef[m[33m ([m[1;32mtest[m[33m, [m[1;32mprod[m[33m)[m HEAD@{70}: checkout: moving from main to master
+[33mfc0f81b[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m HEAD@{71}: merge dev: Fast-forward
+[33m1213011[m HEAD@{72}: checkout: moving from dev to main
+[33mfc0f81b[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m HEAD@{73}: commit: removed kanban comp
+[33m1213011[m HEAD@{74}: merge main: Fast-forward
+[33m65c8b7d[m HEAD@{75}: checkout: moving from main to dev
+[33m1213011[m HEAD@{76}: commit: removed kanban package
+[33m65c8b7d[m HEAD@{77}: checkout: moving from dev to main
+[33m65c8b7d[m HEAD@{78}: checkout: moving from main to dev
+[33m118bf9e[m HEAD@{79}: commit: removed kanban component
+[33m65c8b7d[m HEAD@{80}: checkout: moving from dev to main
+[33m65c8b7d[m HEAD@{81}: commit: Fix unused variable in vite.debug.info.ts
+[33m6e1040e[m HEAD@{82}: commit: Initial commit
+[33m825ccef[m[33m ([m[1;32mtest[m[33m, [m[1;32mprod[m[33m)[m HEAD@{83}: checkout: moving from test to dev
+[33m825ccef[m[33m ([m[1;32mtest[m[33m, [m[1;32mprod[m[33m)[m HEAD@{84}: checkout: moving from prod to test
+[33m825ccef[m[33m ([m[1;32mtest[m[33m, [m[1;32mprod[m[33m)[m HEAD@{85}: checkout: moving from master to prod
+[33m825ccef[m[33m ([m[1;32mtest[m[33m, [m[1;32mprod[m[33m)[m HEAD@{86}: commit (initial): BROKEN APP TEMPLATE: ev-t14 INITIALIZED

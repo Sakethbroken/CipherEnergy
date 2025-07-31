@@ -79,11 +79,11 @@ const Apps = () => {
       {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
 
       {/* Hero Section */}
-      ``````<div className="bg-gradient-to-b from-white/50 to-[#074FF7] min-h-[613px] flex flex-col items-center py-20">``````
-        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent font-black text-center">
+      <div className="bg-gradient-to-b from bg-[#020919] to-[#074FF7] min-h-[613px] flex flex-col items-center py-20 ">
+        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center">
           Applications
         </em>
-        <p className="text-2xl italic text-black mt-5 text-center px-4">
+        <p className="text-2xl italic text-white mt-5 text-center px-4">
           Why our motors are <br /> revolutionary?
         </p>
 
@@ -105,11 +105,13 @@ const Apps = () => {
       </div>
 
       {/* EV Section */}
+
+      <div className="bg-gradient-to-b from bg-[#074FF7] to-[#031B51] ">
       <div className="flex flex-col items-center pt-20 w-full px-4">
-        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent font-black text-center">
+        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center">
           Electrical Vehicle
         </em>
-        <p className="text-xl italic text-black mt-5 text-center max-w-[578px]">
+        <p className="text-xl italic text-white mt-5 text-center max-w-[578px]">
           Accelerating India's transition to electric mobility with high-efficiency axial flux motors
         </p>
 
@@ -131,10 +133,11 @@ const Apps = () => {
         <Cards title="CEM1" productId="cem1" />
         <Cards title="CEM2" productId="cem2" />
       </div>
+      </div>
 
       {/* Case Studies */}
-      <div className="max-w-[1200px] px-4 mx-auto">
-        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent font-black text-center mt-10">
+      <div className="flex flex-col items-center px-4 mx-auto py-20 bg-gradient-to-b from-[#031B51] to-[#020919]">
+        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center mt-10">
           Success stories with <br />Indian EV manufacturers
         </em>
 
@@ -144,10 +147,10 @@ const Apps = () => {
               <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
             </div>
             <div className="w-full lg:w-[482px] flex flex-col gap-3">
-              <h1 className="font-bold text-lg bg-gradient-to-tr from-[#020919] via-[#074FF7] to-[#020919] text-transparent bg-clip-text">
+              <h1 className="font-bold text-lg bg-gradient-to-tr from-[white] text-transparent bg-clip-text">
                 {card.title}
               </h1>
-              <p className="font-body text-base font-normal leading-6">{card.desc}</p>
+              <p className="font-body text-base font-normal text-white leading-6">{card.desc}</p>
               <button className="hidden lg:flex text-sm h-[36px] w-[100px] font-semibold items-center justify-center rounded-[8px] text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] to-[#020919] relative before:absolute before:inset-0 before:rounded-[8px] before:p-[2px] before:bg-gradient-to-b before:from-[#020919] before:via-[#074FF7] before:to-[#020919] before:-z-10 after:absolute after:inset-[2px] after:rounded-[6px] after:bg-white after:-z-10">
                 Read more
               </button>
@@ -157,8 +160,8 @@ const Apps = () => {
       </div>
 
       {/* Documentation */}
-      <div className="max-w-[1200px] px-4 mx-auto py-20">
-        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent font-black text-center">
+      <div className="flex flex-col items-center px-4 mx-auto py-20 bg-gradient-to-b from-[#020919] to-[#0944CF]">
+        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center">
           Technical Documentation
         </em>
 
@@ -181,6 +184,8 @@ const Apps = () => {
             </div>
           ))}
         </div>
+
+
       </div>
     </div>
   );
