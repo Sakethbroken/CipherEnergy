@@ -39,18 +39,20 @@ const CHome = () => {
       <div
         className="relative w-full overflow-x-hidden flex flex-col rounded-lg gap-4"
         style={{
-          background: "linear-gradient(to bottom, #FFFFFF 10%, #074FF7 30%, #000000 85%)",
+          background: "linear-gradient(to bottom, #020919 , #074FF7, #020919)",
         }}
       >
         {/* Hero Section */}
+       
         <div className="flex flex-col items-center w-full py-20">
           <Hero />
         </div>
 
         {/* Scroll Synced Video Section */}
-        <div>
+        {/* <div>
           <ScrollVideo />
-        </div>
+        </div> */}
+        
 
         {/* Key Benefits Heading */}
     <div className="hidden sm:flex flex-col w-[398px] h-[137px] mx-auto items-center justify-center max-w-[768px] gap-[14px]">
@@ -80,26 +82,34 @@ const CHome = () => {
       </div>
 
       {/* Products Section */}
-      <div className="relative w-full bg-[#F4F4F4] flex flex-col items-center gap-4">
+      <div className="relative w-full bg-[#020919] flex flex-col items-center gap-4">
         <div className="w-full max-w-[768px] px-4 mx-auto text-center py-8">
           <div className="flex flex-col items-center gap-2">
-            <span className="text-black font-body font-bold text-5xl sm:text-6xl leading-tight">
-              Featured
+            <span className="flex flex-row items-center justify-center gap-3">
+              <span className="text-white font-body font-bold text-5xl sm:text-6xl leading-tight">
+                Featured
+              </span>
+              <span className="playfair font-title font-black italic text-4xl sm:text-6xl leading-tight bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent">
+                Products
+              </span>
             </span>
-            <span className="playfair font-title font-black italic text-4xl sm:text-6xl leading-tight bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent">
-              Products
-            </span>
-            <p className="text-base sm:text-lg font-medium text-black opacity-80 mt-2">
+            <p className="text-base sm:text-lg font-medium text-white opacity-80 mt-2">
               Why our motors are revolutionary?
             </p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-12 px-4 w-full">
+        <div className="flex  flex-col gap-12 px-4 w-full  ">
+            
           <Cards title="CEM 1 SERIES" cardData={cemSeries1Data} />
+           
+         
           <Cards title="CEM 2 SERIES" cardData={cemSeries1Data} isImageRight />
+          
           <Cards title="CEM 3 SERIES" cardData={cemSeries1Data} />
-        </div>
+          </div>
+          
+        
 
         <ImageCarousel />
       </div>
