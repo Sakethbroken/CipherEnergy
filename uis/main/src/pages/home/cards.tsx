@@ -59,7 +59,7 @@ const Cards = ({ title, isImageRight = false, cardData }) => {
 
         <Link
           to="./products"
-         className="flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] rounded-md border-2 border-[#074FF7]  transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]"
+         className="holo-trans flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] rounded-md border-1 border-[white]  transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]"
 
         >
           DOWNLOAD DATASHEET
@@ -67,7 +67,7 @@ const Cards = ({ title, isImageRight = false, cardData }) => {
 
         <Link
           to="./contactus"
-          className="flex justify-center text-nowrap px-6 py-2 items-center text-xs sm:text-sm font-semibold w-full sm:w-[160px] h-[40px] rounded-sm
+          className="holographic-link flex justify-center text-nowrap px-6 py-2 items-center text-xs sm:text-sm font-semibold w-full sm:w-[160px] h-[40px] rounded-sm
             bg-gradient-to-tr from-[#020919] via-[#074FF7] via-40% via-[#6384E9] to-[#020919]
             text-white  transition"
         >

@@ -87,9 +87,9 @@ const teamSections = [
 
 const Team = () => {
   return (
-    <div className="flex flex-col items-center justify-center relative mt-30 w-full px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col  items-center justify-center relative w-full px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col items-center w-full max-w-7xl">
-        <em className="playfair bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic text-center">
+        <em className="playfair bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic text-center">
           Our Team
         </em>
 
@@ -98,7 +98,7 @@ const Team = () => {
             key={index}
             className="w-full flex flex-col items-center gap-3 justify-center mt-10 mb-16"
           >
-            <h2 className="font-bold text-[40px] bg-gradient-to-b from-black to-[#074FF7] bg-clip-text text-transparent">
+            <h2 className="font-bold text-[40px] bg-gradient-to-b from-white to-[#074FF7] bg-clip-text text-transparent">
               {section.title}
             </h2>
             <p className="text-lg opacity-80 font-body font-normal text-center leading-[27px] max-w-xl px-4 mb-6">

@@ -25,7 +25,7 @@ const Cards = ({ title, productId }) => {
         </h1>
        <Link
   to={`/${productId}`}
-  className="holographic-text flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] rounded-md border-2 border-[#074FF7] transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text"
+  className="holo-cards flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] rounded-md border-2 border-[#074FF7] transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text"
 >
   View more about {title.toUpperCase()}
 </Link>

@@ -163,23 +163,20 @@ const Res = () => {
 
   return (
     <>
-      <div className="w-full pb-15">
-          <Header onHamburgerClick={toggleSidebar} />
-          {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
-        </div>
-    
-    <div className="mx-4 md:mx-8 lg:mx-16">
-      <div className="flex flex-col items-center justify-center w-full">
-        
-        {/* Page Title */}
-        <div className="flex justify-center">
-          <em className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] font-black italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent text-center mt-10">
-            Resources
-          </em>
-        </div>
+      <div className="w-full">
+        <Header onHamburgerClick={toggleSidebar} />
+        {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
+      </div>
 
+      <div className="w-full overflow-x-hidden flex flex-col items-center justify-center">
         {/* 2-Card Section */}
-        <div className="w-full max-w-[1000px] flex flex-col items-center justify-center mt-10">
+        <div className="w-full flex flex-col items-center justify-center bg-gradient-to-b from-[#020919] to-[#031030] px-4 md:px-8 lg:px-16">
+          <div className="flex justify-center">
+            <em className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] pb-10 font-black italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent text-center pt-10">
+              Resources
+            </em>
+          </div>
+
           <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-4">
             {twoCards.map((card, idx) => (
               <div key={idx} className="flex flex-col gap-2 w-full lg:w-[484px] cursor-pointer hover:opacity-90 transition">
@@ -189,14 +186,14 @@ const Res = () => {
                   className="rounded-2xl w-full h-[210px] bg-gradient-to-br from-white to-gray-400"
                 />
                 <div className="flex items-center justify-between gap-2">
-                  <h4 className="font-body text-lg font-bold leading-[140%] bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919] text-transparent bg-clip-text">
+                  <h4 className="font-body text-lg font-bold leading-[140%] text-white  bg-clip-text">
                     {card.title}
                   </h4>
                   <div className="cursor-pointer transform transition-transform duration-200 hover:scale-125">
                     <img src={expand} alt="" className="src" />
                   </div>
                 </div>
-                <p className="font-body text-base font-normal leading-6">{card.desc}</p>
+                <p className="font-body text-white text-base font-normal leading-6">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -211,24 +208,22 @@ const Res = () => {
                   className="rounded-2xl w-full h-[210px] bg-gradient-to-br from-white to-gray-400"
                 />
                 <div className="flex items-center justify-between gap-2">
-                  <h4 className="font-body text-lg font-bold leading-[140%] bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919] text-transparent bg-clip-text">
+                  <h4 className="font-body text-lg font-bold leading-[140%] text-white text-transparent bg-clip-text">
                     {card.title}
                   </h4>
                   <div className="cursor-pointer transform transition-transform duration-200 hover:scale-125">
                     <img src={expand} alt="" className="src" />
                   </div>
                 </div>
-                <p className="font-body text-base font-normal leading-6">{card.desc}</p>
+                <p className="font-body text-white text-base font-normal leading-6">{card.desc}</p>
               </div>
             ))}
           </div>
-
-          {/* View All Button */}
-         
         </div>
 
         {/* Case Studies */}
-        <em className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] font-black italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent text-center mt-10">
+        <div className="w-full bg-gradient-to-b from-[#031030] to-[#062774] px-4 md:px-8 lg:px-16 flex flex-col items-center py-20">
+        <em className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] font-black italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent text-center pt-10">
           Case Studies
         </em>
 
@@ -244,7 +239,7 @@ const Res = () => {
 
             <div className="w-full lg:w-[482px] flex flex-col gap-3">
               <div className="flex items-center justify-between gap-2">
-                <h1 className="font-bold text-lg bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919] text-transparent bg-clip-text cursor-pointer hover:opacity-90">
+                <h1 className="font-bold text-lg  text-white  bg-clip-text cursor-pointer hover:opacity-90">
                   {card.title}
                 </h1>
                 <div className="cursor-pointer transform transition-transform duration-200 hover:scale-125">
@@ -253,7 +248,7 @@ const Res = () => {
               </div>
               
               {/* Case study content with conditional expanded text */}
-              <p className="font-body text-base font-normal leading-6">
+              <p className="font-body text-white text-base font-normal leading-6">
                 {expandedCaseStudies[card.id] ? card.fullDesc : card.desc}
               </p>
               
@@ -263,23 +258,20 @@ const Res = () => {
                   e.stopPropagation();
                   toggleCaseStudyReadMore(card.id);
                 }}
-                className="relative hidden cursor-pointer lg:flex text-xs sm:text-sm h-[36px] w-[100px] font-semibold items-center justify-center rounded-[8px] text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] via-[#074FF7] to-[#020919] whitespace-nowrap
-      before:absolute before:inset-0 before:rounded-[8px] before:p-[2px] before:bg-gradient-to-b before:from-[#020919] before:via-[#074FF7] before:via-[#6384E9] before:via-[#074FF7] before:to-[#020919] before:-z-10
-      after:absolute after:inset-[2px] after:rounded-[6px] after:bg-white after:-z-10">
-              
+                className="relative cursor-pointer flex text-xs sm:text-sm h-[36px] w-[100px] font-semibold items-center justify-center rounded-[8px] text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] via-[#074FF7] to-[#020919] whitespace-nowrap
+                before:absolute before:inset-0 before:rounded-[8px] before:p-[2px] before:bg-gradient-to-b before:from-[#020919] before:via-[#074FF7] before:via-[#6384E9] before:via-[#074FF7] before:to-[#020919] before:-z-10
+                after:absolute after:inset-[2px] after:rounded-[6px] after:bg-white after:-z-10">
                 {expandedCaseStudies[card.id] ? "Show Less" : "Read more"}
               </button>
             </div>
           </div>
         ))}
-
-
-      
+        </div>
 
         {/* Technical Documentation */}
-        <div className="flex flex-col items-center justify-center w-full mt-10 pb-10">
-          <em className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] font-black italic bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-transparent text-center">
-            Technical Documentation
+    {/* Technical Documentation */}
+<div className="flex flex-col items-center justify-center w-full  px-4 md:px-8 lg:px-16 bg-gradient-to-b from-[#062774] to-[#0944CF]  pb-30 ">
+<em className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] font-black italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent text-center pt-10">            Technical Documentation
           </em>
 
           <div className="w-full max-w-[1000px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
@@ -315,10 +307,11 @@ const Res = () => {
             ))}
           </div>
         </div>
-
       </div>
-    </div>
-    <Footer1 />
+
+      <div className="">
+      <Footer1 />
+      </div>
     </>
   );
 };

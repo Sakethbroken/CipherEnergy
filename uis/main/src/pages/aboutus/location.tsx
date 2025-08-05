@@ -18,6 +18,16 @@ const Maps = () => {
   const apiKey =  "AIzaSyC6I8Gri1uPiqOf-k4kVxuG9kmRi1egPl0";
 
   return (
+<>
+
+
+<div className="flex justify-center items-center w-[1000px] sm:w-[1200px] md:w-[1400px] lg:w-[1600px] xl:w-[1800px] 2xl:w-[2000px] mx-auto pt-10">
+  <em className="playfair bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic text-center pb-15">
+Locations  </em>
+</div>
+
+
+
     <LoadScript googleMapsApiKey="AIzaSyC6I8Gri1uPiqOf-k4kVxuG9kmRi1egPl0">
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -48,6 +58,7 @@ const Maps = () => {
         )}
       </GoogleMap>
     </LoadScript>
+    </>
   );
 };
 

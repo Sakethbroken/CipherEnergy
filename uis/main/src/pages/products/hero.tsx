@@ -9,8 +9,7 @@ const Hero = () => {
     "CEM3",
     "CEM4",
     "CEM5",
-    "CEM6",
-    "CEM7"
+  
     
   ];
 

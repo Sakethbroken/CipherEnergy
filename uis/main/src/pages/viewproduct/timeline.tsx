@@ -24,7 +24,7 @@ const Htimeline = ({ steps, currentStep }: { steps: number; currentStep: number 
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors
               ${isActive 
-                ? "bg-black text-white"
+                ? "bg-white text-black"
                 : isCompleted 
                 ? "bg-gray-400 text-white"
                 : "bg-white text-gray-500 border border-gray-300"
@@ -69,7 +69,7 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
   };
 
   const baseBoxClass =
-    "border rounded-lg p-6 cursor-pointer w-full sm:w-[280px] h-[140px] text-black flex items-center justify-center text-center";
+    "border rounded-lg p-6 cursor-pointer w-full sm:w-[280px] h-[140px] text-white flex items-center justify-center text-center";
 
   const gridWrapperClass =
     "grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full max-w-6xl mx-auto";
@@ -78,7 +78,7 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
     case 1:
       return (
         <div className="w-full max-w-[1200px] mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Select motor model</h2>
+          <h2 className="text-2xl font-bold mb-6 text-white">Select motor model</h2>
           <div className={gridWrapperClass}>
             {Array.from({ length: 6 }, (_, i) => {
               const val = `CEM ${i + 1}`;
@@ -87,7 +87,7 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
                   key={i}
                   onClick={() => handleSelection("motor_model", val)}
                   className={`${baseBoxClass} ${
-                    formData.motor_model === val ? "border-black bg-gray-100" : "border-gray-300"
+                    formData.motor_model === val ? "border-white bg-gray-100 text-black" : "border-gray-300"
                   }`}
                 >
                   <p className="text-sm font-medium text-left">{val}</p>
@@ -100,7 +100,7 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
     case 2:
       return (
         <div className="w-full max-w-[1200px] mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Select Mounting Options</h2>
+          <h2 className="text-2xl font-bold mb-6 text-white">Select Mounting Options</h2>
           <div className={gridWrapperClass}>
             {[
               "Wall Mounted",
@@ -114,7 +114,7 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
                 key={i}
                 onClick={() => handleSelection("mounting_options", val)}
                 className={`${baseBoxClass} ${
-                  formData.mounting_options === val ? "border-black bg-gray-100" : "border-gray-300"
+                  formData.mounting_options === val ? "border-white bg-gray-100 text-black" : "border-gray-300"
                 }`}
               >
                 <p className="text-sm font-medium text-left">{val}</p>
@@ -126,7 +126,7 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
     case 3:
       return (
         <div className="w-full max-w-[1200px] mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Add Cooling System Preferences</h2>
+          <h2 className="text-2xl font-bold mb-6 text-white">Add Cooling System Preferences</h2>
           <div className={gridWrapperClass}>
             {[
               "None",
@@ -140,7 +140,7 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
                 key={i}
                 onClick={() => handleSelection("cooling_system", val)}
                 className={`${baseBoxClass} ${
-                  formData.cooling_system === val ? "border-black bg-gray-100" : "border-gray-300"
+                  formData.cooling_system === val ? "border-white bg-gray-100 text-black" : "border-gray-300"
                 }`}
               >
                 <p className="text-sm font-medium text-left">{val}</p>
@@ -152,7 +152,7 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
     case 4:
       return (
         <div className="w-full max-w-[1200px] mx-auto">
-          <h2 className="text-2xl font-bold mb-6">Configure electrical connections</h2>
+          <h2 className="text-2xl font-bold mb-6 text-white">Configure electrical connections</h2>
           <div className={gridWrapperClass}>
             {[
               "Single Phase",
@@ -166,7 +166,7 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
                 key={i}
                 onClick={() => handleSelection("electrical_connections", val)}
                 className={`${baseBoxClass} ${
-                  formData.electrical_connections === val ? "border-black bg-gray-100" : "border-gray-300"
+                  formData.electrical_connections === val ? "border-white bg-gray-100 text-black" : "border-gray-300"
                 }`}
               >
                 <p className="text-sm font-medium text-left">{val}</p>
@@ -204,14 +204,14 @@ const StepContent = ({ step, formData, setFormData }: StepContentProps) => {
           </div>
 
           <div className="w-full md:w-1/2">
-            <h3 className="text-xl font-semibold mb-4">Your configuration is ready!</h3>
-            <ul className="text-sm space-y-2 mb-4 text-black">
+            <h3 className="text-xl font-semibold mb-4 text-white">Your configuration is ready!</h3>
+            <ul className="text-sm space-y-2 mb-4 text-white">
               <li>1. Motor: <span className="font-medium">{formData.motor_model}</span></li>
               <li>2. Mounting option: <span className="font-medium">{formData.mounting_options}</span></li>
               <li>3. Cooling preference: <span className="font-medium">{formData.cooling_system}</span></li>
               <li>4. Electrical connection: <span className="font-medium">{formData.electrical_connections}</span></li>
             </ul>
-            <p className="text-sm text-gray-600">We will send the configuration detail to you</p>
+            <p className="text-sm text-gray-300">We will send the configuration detail to you</p>
           </div>
         </div>
       );
@@ -298,8 +298,8 @@ if (!emailRegex.test(formData.email)) {
             <circle cx="12" cy="12" r="10" stroke="#4CAF50" strokeWidth="2" />
             <path d="M8 12l2 2l4-4" stroke="#4CAF50" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <h2 className="text-2xl font-semibold mb-2">Congratulations! Your request has been sent</h2>
-          <ul className="text-base text-black space-y-1 mt-4">
+          <h2 className="text-2xl font-semibold mb-2 text-white">Congratulations! Your request has been sent</h2>
+          <ul className="text-base text-white space-y-1 mt-4">
             <li>1. Motor: <strong>{formData.motor_model}</strong></li>
             <li>2. Mounting: <strong>{formData.mounting_options}</strong></li>
             <li>3. Cooling: <strong>{formData.cooling_system}</strong></li>

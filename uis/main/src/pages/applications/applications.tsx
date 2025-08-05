@@ -7,14 +7,34 @@ import ev from "../../assets/images/ev.png";
 import verified from "../../assets/icons/verified.png";
 import expand from "../../assets/icons/expand.png";
 
+
+
+
+import industrial from "../../assets/images/industrial.png";
+import marine from "../../assets/images/marines.png";
+import aerospace from "../../assets/images/aerospace.png";
+import defence from "../../assets/images/defence.png";
+import drone from "../../assets/images/drones.png";
+import renewable from "../../assets/images/renewable.png";
+
 const Apps = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const navigate = useNavigate();
   const toggleSidebar = () => setShowSidebar(prev => !prev);
 
+  const applicationImages = [
+  aerospace,
+  defence,
+  industrial,
+  renewable,
+  drone,
+  marine
+];
+
+
   const applicationCards = [
-    "Aerospace", "Defence", "Aviation", "Industrial Machinery",
-    "Renewable Energy", "Drones", "Marine"
+    "Aerospace", "Defence",  "Industrial Machinery",
+    "Renewable Energy", "Drones", "Marines"
   ];
 
   const handleCardClick = (productId: string) => {
@@ -88,18 +108,25 @@ const Apps = () => {
         </p>
 
         <div className="px-4 sm:px-6 lg:px-8 mt-10">
-          <div className="flex overflow-x-auto gap-4 hide-scrollbar w-full max-w-[1200px]">
-            {applicationCards.map((label, idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0 w-[140px] flex flex-col items-center"
-              >
-                <div className="w-full aspect-square rounded-md bg-white/20 hover:bg-opacity-30 transition-all" />
-                <h1 className="mt-2 text-white text-lg font-medium text-center opacity-55 font-body">
-                  {label}
-                </h1>
-              </div>
-            ))}
+            <div className="flex justify-center overflow-x-auto gap-6 hide-scrollbar w-full max-w-[1160px] mx-auto">
+        {applicationCards.map((label, idx) => (
+  <div
+    key={idx}
+    className="flex-shrink-0 w-[152px] flex flex-col items-center"
+  >
+    <div className="w-full aspect-square rounded-md overflow-hidden bg-white/10 hover:bg-opacity-30 transition-all">
+      <img
+        src={applicationImages[idx]}
+        alt={label}
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <h1 className="mt-2 text-white text-lg font-medium text-center opacity-55 font-body">
+      {label}
+    </h1>
+  </div>
+))}
+
           </div>
         </div>
       </div>

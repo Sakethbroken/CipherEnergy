@@ -32,7 +32,7 @@ const Footer2: React.FC<Footer2Props> = ({ hideMissionSection = false }) => {
             Start Saving Millions <br /> with Cipher Energy
           </h1>
 
-          <button className="text-white text-sm cursor-pointer font-semibold w-[180px] h-[40px] rounded-sm
+          <button className="holographic-link text-white text-sm cursor-pointer font-semibold w-[180px] h-[40px] rounded-sm
             bg-gradient-to-tr from-[#020919] via-[#074FF7] via-40% via-[#6384E9] to-[#020919] 
              transition mt-6 lg:mt-0
           ">

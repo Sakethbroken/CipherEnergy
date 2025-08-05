@@ -19,10 +19,10 @@ const Hero = ({ title, tagline }: HeroProps) => {
   return (
     <div className="text-center pt-4 sm:pt-6 md:pt-8 lg:pt-10">
       <div className="flex flex-col items-center px-4 sm:px-6">
-        <em className="bg-gradient-to-r from-black to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic playfair">
+        <em className="bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic playfair">
           {title}
         </em>
-        <p className="text-sm sm:text-md w-full sm:w-[400px] md:w-[500px] lg:w-[578px] mt-2 sm:mt-3 md:mt-4 text-gray-800 text-center">
+        <p className="text-sm sm:text-md w-full sm:w-[400px] md:w-[500px] lg:w-[578px] mt-2 sm:mt-3 md:mt-4 text-white text-center">
           {tagline}
         </p>
       </div>

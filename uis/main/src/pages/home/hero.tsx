@@ -81,17 +81,21 @@ const Hero = () => {
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-8 w-full items-center justify-center">
         <Link
           to="./products"
-          className="flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] rounded-md border-2 border-[#074FF7] transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]"
+         className=" holographic-link flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] 
+rounded-tl-[1rem] rounded-br-[1rem] border-2 border-[#074FF7] transition overflow-hidden whitespace-nowrap 
+text-white bg-gradient-to-r from-[#074FF7] via-[white opacity-30] to-[#6384E9]"
+
         >
           EXPLORE PRODUCTS
         </Link>
         <Link
           to="./contactus"
-          className="flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-[128px] h-[40px] rounded-sm
-            bg-gradient-to-tr from-[#020919] via-[#074FF7] via-40% via-[#6384E9] to-[#020919]
-            text-white transition"
+         className="holo-trans flex justify-center items-center text-xs sm:text-sm font-semibold sm:w-auto px-5 w-full  h-[40px]
+rounded-tl-[1rem] rounded-br-[1rem] border border-white text-white
+bg-transparent hover:bg-white hover:text-[#020919] text-nowrap transition-colors duration-300"
+
         >
-          REQUEST DEMO
+          EXPLORE PRODUCTS
         </Link>
       </div>
     </div>
