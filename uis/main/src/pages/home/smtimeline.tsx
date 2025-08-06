@@ -65,17 +65,17 @@ const Mobiletimeline = () => {
         className="absolute bottom-0 w-full h-[1500px] object-contain z-0"
       />
 
-      <div className="text-center font-bold px-4">
-        <div className="mx-auto leading-tight">
-          <span className="text-white text-5xl">Key </span>
-          <span className="playfair text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white to-white/10">
-            benefits
-          </span>
-        </div>
-        <p className="text-sm font-light text-white opacity-80 mt-2">
-          Why our motors are revolutionary?
-        </p>
-      </div>
+   <div className="hidden sm:block text-center font-bold px-4">
+  <div className="mx-auto leading-tight">
+    <span className="text-white text-5xl">Key </span>
+    <span className="playfair text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white to-white/10">
+      benefits
+    </span>
+  </div>
+  <p className="text-sm font-light text-white opacity-80 mt-2">
+    Why our motors are revolutionary?
+  </p>
+</div>
 
       {/* Cards */}
       <div className="relative z-10 flex flex-col items-center gap-10 px-4 pt-[170px]">

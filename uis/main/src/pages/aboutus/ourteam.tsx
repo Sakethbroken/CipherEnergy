@@ -12,7 +12,7 @@ const TeamMemberCard = ({ image, title, name }) => {
 
   return (
     <div
-      className="flex flex-col gap-2 transition-all duration-300"
+      className="flex flex-col gap-2 transition-all duration-300 w-full min-w-0"
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >
@@ -23,8 +23,8 @@ const TeamMemberCard = ({ image, title, name }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <p className="text-[18px] opacity-80">{title}</p>
-      <h1 className="font-['Font_1'] text-2xl leading-[120%] tracking-[-0.0216em]">
+      <p className="text-[18px] opacity-80 text-white">{title}</p>
+      <h1 className="font-['Font_1'] text-2xl leading-[120%] tracking-[-0.0216em] text-white">
         {name}
       </h1>
       <div
@@ -32,7 +32,7 @@ const TeamMemberCard = ({ image, title, name }) => {
           isExpanded ? 'max-h-40' : 'max-h-0'
         }`}
       >
-        <div className="px-2 pb-4 text-sm text-gray-700">
+        <div className="px-2 pb-4 text-sm text-gray-300">
           {defaultExpandableText}
         </div>
       </div>
@@ -75,7 +75,7 @@ const teamSections = [
   {
     title: 'Business Development Team',
     description:
-      'Comes with an experience in India’s energy and automotive sectors',
+      'Comes with an experience in Indias energy and automotive sectors',
     members: [
       { image: person2, title: 'BD Manager', name: 'Maya Iyer' },
       { image: person2, title: 'Analyst', name: 'Nikhil Rao' },
@@ -87,9 +87,9 @@ const teamSections = [
 
 const Team = () => {
   return (
-    <div className="flex flex-col  items-center justify-center relative w-full px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col items-center w-full max-w-7xl">
-        <em className="playfair bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic text-center">
+    <div className="flex flex-col items-center justify-center relative w-full overflow-x-hidden">
+      <div className="flex flex-col items-center w-full max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-0">
+        <em className="playfair bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic text-center mb-10">
           Our Team
         </em>
 
@@ -98,14 +98,14 @@ const Team = () => {
             key={index}
             className="w-full flex flex-col items-center gap-3 justify-center mt-10 mb-16"
           >
-            <h2 className="font-bold text-[40px] bg-gradient-to-b from-white to-[#074FF7] bg-clip-text text-transparent">
+            <h2 className="font-bold text-[40px] bg-gradient-to-b from-white to-[#074FF7] bg-clip-text text-transparent text-center">
               {section.title}
             </h2>
-            <p className="text-lg opacity-80 font-body font-normal text-center leading-[27px] max-w-xl px-4 mb-6">
+            <p className="text-lg opacity-80 font-body font-normal text-center leading-[27px] max-w-xl px-4 mb-6 text-white">
               {section.description}
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-full">
               {section.members.map((member, i) => (
                 <TeamMemberCard
                   key={i}

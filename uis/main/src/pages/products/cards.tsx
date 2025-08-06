@@ -17,56 +17,53 @@ const stats = [
 
 const Cards = ({ title, productId }) => {
   return (
-    <div className="flex flex-col w-full max-w-[1200px]   mx-auto px-2 sm:px-6 lg:px-8 py-4">
-      {/* Title and CTA Button */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
-        <h1 className="font-bold text-2xl sm:text-4xl opacity-80 text-center text-white sm:text-left">
-          {title.toUpperCase()} SERIES
-        </h1>
-       <Link
-  to={`/${productId}`}
-  className="holo-cards flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] rounded-md border-1 border-[white] transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text"
->
-  View more about {title.toUpperCase()}
-</Link>
-
-      </div>
-
-      {/* Responsive Images Section */}
-      <div className="mt-6 overflow-x-auto md:overflow-x-hidden lg:overflow-x-visible scrollbar-hide">
-        <div className="flex gap-4 w-max md:w-full">
-          <div className="min-w-[280px] md:flex-1 h-[280px] rounded-[2rem] shadow-md bg-gradient-to-br from-[#FFFFFF] to-[#999999]"></div>
-
-          <div className="min-w-[280px] md:flex-1 h-[280px] bg-gradient-to-br from-[#ffffff] to-[#999999] rounded-[2rem] shadow-md"></div>
-        </div>
-      </div>
-
-      {/* Stats Grid */}
-      <div className="w-full mt-6 grid grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
-        {stats.map((card, idx) => (
-          <div
-            key={idx}
-            className={`
-              w-[109px] h-[142px]
-              sm:w-[109px] sm:h-[142px]
-              md:w-[180px] md:h-[170px]
-              lg:w-[180px] lg:h-[220px]
-              rounded-[2rem] pl-2 sm:pl-4 flex flex-col items-start justify-center 
-              ${card.shadow ? "bg-[#6384E966]" : "bg-[#6384E933]"}
-
-              p-2 sm:p-4 text-left`}
+    <div className="w-full overflow-x-hidden">
+      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-0 py-8">
+        {/* Title and CTA Button */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 mb-8">
+          <h1 className="font-bold text-3xl lg:text-4xl opacity-80 text-center text-white sm:text-left">
+            {title.toUpperCase()} SERIES
+          </h1>
+          <Link
+            to={`/${productId}`}
+            className="holo-cards flex justify-center items-center text-sm font-semibold w-full sm:w-auto px-6 h-[40px] rounded-md border border-white transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text"
           >
-            <div className="pl-1 sm:pl-2 mb-2 sm:mb-3">
-              <img src={card.icon} alt={card.alt} className="w-[32px] sm:w-[40px] lg:w-[48px] h-auto" />
-            </div>
-            <span className="text-base text-white sm:text-lg md:text-xl pl-1 sm:pl-2 font-bold mb-1">
-              {card.value}
-            </span>
-            <span className="text-[10px] worksans text-wrap sm:text-sm md:text-md pl-1 sm:pl-2 text-gray-300">
-              {card.label}
-            </span>
+            View more about {title.toUpperCase()}
+          </Link>
+        </div>
+
+        {/* Responsive Images Section */}
+        <div className="mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            <div className="w-full h-[280px] rounded-[2rem] shadow-md bg-gradient-to-br from-[#FFFFFF] to-[#999999]"></div>
+            <div className="w-full h-[280px] bg-gradient-to-br from-[#ffffff] to-[#999999] rounded-[2rem] shadow-md"></div>
           </div>
-        ))}
+        </div>
+
+        {/* Stats Grid */}
+        <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 justify-items-center">
+          {stats.map((card, idx) => (
+            <div
+              key={idx}
+              className={`
+                w-full max-w-[180px] h-[180px]
+                rounded-[2rem] flex flex-col items-start justify-center 
+                ${card.shadow ? "bg-[#6384E966]" : "bg-[#6384E933]"}
+                p-4 text-left
+              `}
+            >
+              <div className="mb-3">
+                <img src={card.icon} alt={card.alt} className="w-[40px] h-auto" />
+              </div>
+              <span className="text-lg font-bold mb-2 text-white">
+                {card.value}
+              </span>
+              <span className="text-sm worksans text-gray-300">
+                {card.label}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
