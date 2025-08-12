@@ -12,7 +12,9 @@ import aerospace from "../../assets/images/aerospace.png";
 import defence from "../../assets/images/defence.png";
 import drone from "../../assets/images/drones.png";
 import renewable from "../../assets/images/renewable.png";
-
+import Hero from "./hero";
+import pdf from "../../assets/icons/pdf.png";
+import download from "../../assets/icons/download.png";
 const Apps = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const navigate = useNavigate();
@@ -78,7 +80,7 @@ const Apps = () => {
   const cscards = [
     {
       title: "Use Case 001",
-      desc: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id commodo felis. Ut ultrices enim in eros posuere rutrum. Morbi enim nisi, imperdiet sed tempor eu, tempus ut ligula. Proin bibendum sapien eu lorem laoreet rhoncus. Integer a tempus leo. Vivamus mattis at est eu auctor. Suspendisse nec aliquet nunc. ",
       img: "https://via.placeholder.com/352x210"
     },
     {
@@ -94,49 +96,29 @@ const Apps = () => {
       {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-[#020919] to-[#074FF7] min-h-[613px] flex flex-col items-center py-20">
-        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center">
-          Applications
-        </em>
-        <p className="text-2xl italic text-white mt-5 text-center px-4">
-          Why our motors are <br /> revolutionary?
-        </p>
 
-        <div className="px-4 sm:px-6 lg:px-8 mt-10">
-          <div className="flex justify-center overflow-x-auto gap-6 hide-scrollbar w-full max-w-[1160px] mx-auto">
-            {applicationCards.map((label, idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0 w-[152px] flex flex-col items-center"
-              >
-                <div className="w-full aspect-square rounded-md overflow-hidden bg-white/10 hover:bg-opacity-30 transition-all">
-                  <img
-                    src={applicationImages[idx]}
-                    alt={label}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h1 className="mt-2 text-white text-lg font-medium text-center opacity-55 font-body">
-                  {label}
-                </h1>
-              </div>
-            ))}
-          </div>
-        </div>
+       
+      <div className="bg-gradient-to-b from-[#020919] to-[#074FF7] p-[120px]">
+        <Hero />
       </div>
 
+
+
+
       {/* EV Section */}
-      <div className="bg-gradient-to-b from-[#074FF7] to-[#031B51]">
-        <div className="flex flex-col items-center pt-20 w-full px-4">
+      <div className="bg-gradient-to-b flex flex-col from-[#074FF7] to-[#031B51] p-[120px] gap-[80px]">
+
+        <div className="flex flex-col items-center  w-[768px] h-[193px] mx-auto gap-[14px]">
           <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center">
             Electrical Vehicle
           </em>
-          <p className="text-xl italic text-white mt-5 text-center max-w-[578px]">
+          <p className="text-xl worksans text-white  text-center w-[344px] h-[102px]">
             Accelerating India's transition to electric mobility with high-efficiency axial flux motors
           </p>
+           </div>
 
-          <div className="w-full max-w-[1200px] my-10">
-            <img src={ev} alt="EV Application" className="w-full rounded-2xl max-h-[616px] object-cover" />
+          <div className="w-full max-w-[1200px] mx-auto flex flex-col ">
+            <img src={ev} alt="EV Application" className="w-full rounded-2xl mx-auto max-h-[616px] object-cover" />
             <div className="flex flex-col lg:flex-row gap-5 mt-5">
               {["Weight reduction", "Increased Range", "Superior Torque"].map((label, i) => (
                 <div key={i} className="flex justify-between items-center px-4 h-[96px] w-full bg-[#EDEDED] rounded-2xl">
@@ -146,7 +128,7 @@ const Apps = () => {
               ))}
             </div>
           </div>
-        </div>
+       
 
         {/* Cards */}
         <div className="flex flex-col items-center gap-10 py-20">
@@ -155,54 +137,67 @@ const Apps = () => {
         </div>
       </div>
 
+
+
+
       {/* Case Studies */}
-      <div className="flex flex-col items-center px-4 mx-auto py-20 bg-gradient-to-b from-[#031B51] to-[#020919]">
-        <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center mt-10">
+      <div className="flex flex-col items-center gap-[80px] p-[120px] mx-auto  bg-gradient-to-b from-[#031B51] to-[#020919]">
+
+        <em className="playfair italic font-black text-[64px] md:text-[64px] bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent leading-[120%] tracking-[-0.02em] text-center max-w-[768px] h-[154px]">
           Success stories with <br />Indian EV manufacturers
         </em>
 
-        <div className="w-full max-w-[1000px]">
+        <div className="w-full flex flex-col  gap-[80px] max-w-[1000px]">
           {cscards.map((card, idx) => (
-            <div key={idx} className="flex flex-col lg:flex-row gap-5 mt-10">
-              <div className="w-full lg:w-[482px] h-[210px] lg:h-[316px] rounded-2xl overflow-hidden bg-gradient-to-br from-[#FFFFFF] to-[#999999]">
+            <div key={idx} className="flex flex-col lg:flex-row gap-[36px]">
+
+
+              <div className="w-full lg:w-[482px] h-[210px] lg:h-[316px] rounded-2xl overflow-hidden bg-gradient-to-tr from-[#999999] to-[#FFFFFF]">
                 <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
               </div>
-              <div className="w-full lg:w-[482px] flex flex-col gap-3">
+
+
+              <div className="w-full lg:w-[482px] flex flex-col gap-[24px]">
                 <h1 className="font-bold text-lg bg-gradient-to-tr from-white to-white text-transparent bg-clip-text">
                   {card.title}
                 </h1>
                 <p className="font-body text-base font-normal text-white leading-6">{card.desc}</p>
-                <button className="hidden lg:flex text-sm h-[36px] w-[100px] font-semibold items-center justify-center rounded-[8px] text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] to-[#020919] relative before:absolute before:inset-0 before:rounded-[8px] before:p-[2px] before:bg-gradient-to-b before:from-[#020919] before:via-[#074FF7] before:to-[#020919] before:-z-10 after:absolute after:inset-[2px] after:rounded-[6px] after:bg-white after:-z-10">
+                <button className="hidden holo-cards lg:flex text-sm h-[36px] w-[100px] font-semibold p-3 text-nowrap items-center justify-center">
                   Read more
                 </button>
               </div>
+
+
             </div>
           ))}
         </div>
       </div>
 
       {/* Documentation */}
-      <div className="flex flex-col items-center px-4 mx-auto py-20 bg-gradient-to-b from-[#020919] to-[#0944CF]">
+      <div className="flex flex-col items-center gap-[80px] p-[120px] mx-auto bg-gradient-to-b from-[#020919] to-[#0944CF]">
         <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center">
           Technical Documentation
         </em>
 
         <div className="w-full max-w-[1000px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[36px]">
             {techDocs.map((doc, idx) => (
               <div
                 key={idx}
-                className="min-h-[144px] rounded-xl border border-gray-200 bg-white shadow-sm p-4 flex flex-col justify-between cursor-pointer hover:shadow-md transition-shadow"
+                className="min-h-[200px] max-w-[317px] rounded-[32px] border-[2px] border-white bg-[#FFFFFF4D] shadow-sm p-[32px] flex flex-col justify-between cursor-pointer hover:shadow-md transition-shadow"
                 onClick={() => downloadPDF(doc.id, doc.title)}
               >
                 <div className="flex justify-between">
-                  <h1 className="text-base font-semibold text-black">{doc.title}</h1>
-                  <img src={expand} alt="expand" className="w-4 h-4" />
+                  <h1 className="text-base font-semibold text-white/80">{doc.title}</h1>
+                  
                 </div>
-                <div className="flex items-center gap-2 mt-2">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF icon" className="w-6 h-6" />
-                  <span className="text-sm text-black">PDF</span>
-                  <img src="https://cdn-icons-png.flaticon.com/512/724/724933.png" alt="Download" className="ml-auto w-5 h-5" />
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-1">
+                  <span className=" worksans text-lg text-white/30">PDF</span>
+                  <img src={pdf} alt="PDF icon" className="w-[32px] h-[32px]" />
+                  </div>
+                  
+                  <img src={download} alt="Download" className="w-[33px] h-[32px]" />
                 </div>
               </div>
             ))}

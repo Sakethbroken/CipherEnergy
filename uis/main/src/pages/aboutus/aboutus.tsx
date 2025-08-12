@@ -9,6 +9,7 @@ import Locationpage from "./location";
 import Footer2 from "../footer2";
 import Footer1 from "../footer";
 import Cards from "./cards";
+import abindia from "../../assets/images/abindia.png";
 
 const Aboutpage = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -30,38 +31,39 @@ const Aboutpage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
-      {/* Hero Section */}
+    <div className="min-h-screen overflow-x-hidden flex flex-col ">
+      {/* Header */}
       <div className="relative w-full">
-        <div className="relative z-20 w-full">
-          <Header onHamburgerClick={toggleSidebar} highlightOnClick />
-          {showSidebar && (
-            <div className="fixed inset-0 z-30">
-              <Mobilesidebar onClose={toggleSidebar} />
-            </div>
-          )}
-        </div>
+        <Header onHamburgerClick={toggleSidebar} highlightOnClick />
+        {showSidebar && (
+          <div className="fixed inset-0 z-30">
+            <Mobilesidebar onClose={toggleSidebar} />
+          </div>
+        )}
+      </div>
 
+      {/* Hero Section */}
+      <div className="relative w-full h-screen flex flex-col items-center justify-center">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0 w-full h-full">
+        <div className="absolute inset-0 z-0">
           <img
-            src={AU}
+            src={abindia}
             alt="About Us Background"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/30 w-full h-full"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
 
         {/* Hero Content */}
         <div
-          className={`relative z-10 flex flex-col items-center justify-center px-4 py-20 min-h-[450px] sm:min-h-[550px] md:min-h-[650px] lg:min-h-[750px] text-center w-full ${
+          className={`relative z-10 flex flex-col gap-6 items-center justify-center text-center ${
             showSidebar ? "hidden" : ""
           }`}
         >
-          <h3 className="text-2xl md:text-3xl lg:text-4xl text-white font-bold mb-4">
+          <h3 className="worksans text-[40px] md:text-3xl lg:text-4xl text-white font-bold">
             About Us
           </h3>
-          <h1 className="max-w-4xl mx-auto w-full px-4">
+          <h1 className="max-w-4xl mx-auto">
             <em className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold italic playfair leading-tight">
               Reimagining Energy for India's Future
             </em>
@@ -69,45 +71,64 @@ const Aboutpage = () => {
         </div>
       </div>
 
-      {/* Main content */}
-      <div className="flex flex-col w-full overflow-x-hidden">
-        <div className="w-full">
-          <div className="w-full bg-gradient-to-b from-[#00051E] to-[#062774] px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
-            <div className="max-w-7xl mx-auto w-full">
-              <Story />
-            </div>
+      {/* Content with Gradient Background */}
+      <div
+        style={{
+          background: `linear-gradient(
+            to bottom,
+            #00051E,
+            #062774,
+            #0944CF,
+            #062774,
+            #001C37,
+            #002B40,
+            #005B62,
+            #002B40,
+            #001C37,
+            #00203A
+          )`,
+        }}
+        className="flex flex-col gap-[200px] pt-[200px] py-16"
+      >
+        {/* Story */}
+        
+          <div className="">
+            <Story />
           </div>
-          
-          <div className="w-full bg-gradient-to-b from-[#062774] via-[#0944CF] to-[#062774]">
-            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-              <Team />
-            </div>
-          </div>
+        
 
-          <div className="w-full bg-gradient-to-b from-[#062774] to-[#002B40]">
-            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-              <VandM />
-            </div>
+        {/* Team */}
+    
+          <div className="">
+            <Team />
           </div>
+       
 
-          <div className="w-full bg-gradient-to-b from-[#002B40] via-[#005B62] to-[#002B40]">
-            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-              <Cards />
-            </div>
+        {/* Vision & Mission */}
+      
+          <div className="">
+            <VandM />
           </div>
+       
 
-          <div className="w-full bg-gradient-to-b from-[#002B40] via-[#001C37] to-[#00203A] pb-10">
-            <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
-              <Locationpage />
-            </div>
+        {/* Cards */}
+        
+          <div className="">
+            <Cards />
           </div>
+      
+
+        {/* Location */}
+        <div className="">
+            <Locationpage />
+         
         </div>
-      </div>
 
-      {/* Footer */}
-      <div className="w-full overflow-x-hidden">
-        <Footer2 hideMissionSection />
-        <Footer1 />
+        {/* Footer */}
+        <div className="w-full">
+          <Footer2 hideMissionSection />
+          <Footer1 />
+        </div>
       </div>
     </div>
   );

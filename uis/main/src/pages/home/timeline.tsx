@@ -45,10 +45,10 @@ const BenefitsTimeline = () => {
   ];
 
   const positions = [
-    { top: "100px", left: "10%" },
-    { top: "100px", left: "60%" },
-    { top: "700px", left: "10%" },
-    { top: "700px", left: "60%" },
+    { top: "100px", left: "0%" },
+    { top: "100px", left: "62%" },
+    { top: "700px", left: "0%" },
+    { top: "700px", left: "62%" },
   ];
 
   const containerVariants: Variants = {

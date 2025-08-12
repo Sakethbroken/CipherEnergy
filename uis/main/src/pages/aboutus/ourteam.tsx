@@ -12,31 +12,42 @@ const TeamMemberCard = ({ image, title, name }) => {
 
   return (
     <div
-      className="flex flex-col gap-2 transition-all duration-300 w-full min-w-0"
-      onMouseEnter={() => setIsExpanded(true)}
-      onMouseLeave={() => setIsExpanded(false)}
-    >
-      <div className="w-full aspect-[3/4] rounded-2xl overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <p className="text-[18px] opacity-80 text-white">{title}</p>
-      <h1 className="font-['Font_1'] text-2xl leading-[120%] tracking-[-0.0216em] text-white">
-        {name}
-      </h1>
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isExpanded ? 'max-h-40' : 'max-h-0'
-        }`}
-      >
-        <div className="px-2 pb-4 text-sm text-gray-300">
-          {defaultExpandableText}
-        </div>
-      </div>
+  className="flex flex-col  rounded-tl-[16px] rounded-tr-[16px] transition-all duration-300 w-full min-w-0"
+  onMouseEnter={() => setIsExpanded(true)}
+  onMouseLeave={() => setIsExpanded(false)}
+>
+  <div className="w-[226px] rounded-tl-[16px] rounded-tr-[16px]  overflow-hidden">
+    <img
+      src={image}
+      alt={name}
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Title */}
+  <div className="bg-[#FAFAFA33] flex flex-col rounded-[16px] w-[226px] h-[88px] gap-[8px p-[12px]">
+  <p className="text-[18px] worksans opacity-80 text-white  px-2 py-1 rounded">
+    {title}
+  </p>
+
+  {/* Name */}
+  <h1 className="worksans text-2xl leading-[120%] tracking-[-0.0216em] text-white  px-2  rounded">
+    {name}
+  </h1>
+  </div>
+
+  {/* Expandable Section */}
+  <div
+    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+      isExpanded ? 'max-h-40' : 'max-h-0'
+    }`}
+  >
+    <div className="px-2 pb-4 text-sm text-gray-300 bg-[#FAFAFA33] rounded-[16px]">
+      {defaultExpandableText}
     </div>
+  </div>
+</div>
+
   );
 };
 
@@ -87,23 +98,25 @@ const teamSections = [
 
 const Team = () => {
   return (
-    <div className="flex flex-col items-center justify-center relative w-full overflow-x-hidden">
-      <div className="flex flex-col items-center w-full max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-0">
-        <em className="playfair bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic text-center mb-10">
+
+      <div className="flex flex-col items-center w-full max-w-[1000px] mx-auto gap-[128px] sm:px-6 lg:px-0">
+        <em className="playfair bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-3xl sm:text-4xl md:text-5xl lg:text-[64px] text-transparent font-extrabold italic text-center ">
           Our Team
         </em>
 
         {teamSections.map((section, index) => (
           <div
             key={index}
-            className="w-full flex flex-col items-center gap-3 justify-center mt-10 mb-16"
+            className="w-full flex flex-col items-center gap-[32px] justify-center "
           >
-            <h2 className="font-bold text-[40px] bg-gradient-to-b from-white to-[#074FF7] bg-clip-text text-transparent text-center">
+            <div className="flex flex-col items-center gap-[16px]">
+            <h2 className="font-bold worksans text-[40px] bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent leading-[1] tracking-normal text-center">
               {section.title}
             </h2>
-            <p className="text-lg opacity-80 font-body font-normal text-center leading-[27px] max-w-xl px-4 mb-6 text-white">
+            <p className="text-sm leading-[27px] worksans opacity-80 font-body font-normal text-center  max-w-xl text-white">
               {section.description}
             </p>
+            </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-full">
               {section.members.map((member, i) => (
@@ -118,7 +131,7 @@ const Team = () => {
           </div>
         ))}
       </div>
-    </div>
+   
   );
 };
 

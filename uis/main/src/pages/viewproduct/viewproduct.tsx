@@ -192,14 +192,20 @@ const ViewProduct = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-            {product.specs.map((item, index) => (
-              <div key={index} className="flex flex-col bg-[#F2F6FF] p-6 gap-4 border rounded-lg w-full">
-                <h3 className="font-normal text-sm text-gray-600">{item.title}</h3>
-                <p className="font-bold text-2xl text-gray-800">{item.value}</p>
-              </div>
-            ))}
-          </div>
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+  {product.specs.map((item, index) => (
+    <div
+      key={index}
+      className={`flex flex-col p-6 gap-4  rounded-lg w-full ${
+        index % 2 === 0 ? 'bg-[#02091959]' : 'bg-[#02091980]'
+      }`}
+    >
+      <h3 className="font-normal text-sm text-gray-300">{item.title}</h3>
+      <p className="font-bold text-2xl text-white">{item.value}</p>
+    </div>
+  ))}
+</div>
+
 
           <div className="w-full flex justify-center mt-8 lg:hidden">
             <button
