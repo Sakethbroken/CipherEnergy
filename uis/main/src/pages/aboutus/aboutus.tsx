@@ -10,6 +10,7 @@ import Footer2 from "../footer2";
 import Footer1 from "../footer";
 import Cards from "./cards";
 import abindia from "../../assets/images/abindia.png";
+import india from "../../assets/icons/india.png";
 
 const Aboutpage = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -124,12 +125,21 @@ const Aboutpage = () => {
          
         </div>
 
+        <div className="w-[470px] h-[90px] mx-auto flex flex-col gap-[8px] ">
+          <img src={india} alt="" className="w-[42px] h-[28px] mx-auto" />
+        <p className="worksans text-white font-normal leading-[27px] text-center">
+          Proudly designed ❤️  and manufactured ⚙️ in India 
+for global applications
+        </p>
+        </div>
+
         {/* Footer */}
-        <div className="w-full">
+     
+      </div>
+         <div className="">
           <Footer2 hideMissionSection />
           <Footer1 />
         </div>
-      </div>
     </div>
   );
 };

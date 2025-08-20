@@ -2,7 +2,9 @@ import { useState } from "react";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
 import Footer1 from "../footer";
-import expand from "../../assets/icons/expand.png"
+import expand from "../../assets/icons/expandwhite.png"
+import pdf from "../../assets/icons/pdf.png";
+import download from "../../assets/icons/download.png";
 
 const Res = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -168,149 +170,150 @@ const Res = () => {
         {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
       </div>
 
-      <div className="w-full overflow-x-hidden flex flex-col items-center justify-center">
+      <div className="w-full">
         {/* 2-Card Section */}
-        <div className="w-full flex flex-col items-center justify-center bg-gradient-to-b from-[#020919] to-[#031030] px-4 md:px-8 lg:px-16">
-          <div className="flex justify-center">
-            <em className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] pb-10 font-black italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent text-center pt-10">
+
+        <div className="w-full flex flex-col items-center justify-center bg-gradient-to-b from-[#020919] to-[#031030] p-4 sm:p-8 md:p-16 lg:p-24 xl:p-[120px] gap-8 sm:gap-12 md:gap-16 lg:gap-[80px]">
+          
+            <em className="playfair font-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px] leading-tight tracking-[-2%] font-black italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent text-center">
               Resources
             </em>
-          </div>
+        
+          <div className="flex flex-col gap-6 sm:gap-8 lg:gap-[36px] w-full max-w-[1000px] px-4 sm:px-6 lg:px-0">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-[32px]">
+              {twoCards.map((card, idx) => (
+                <div key={idx} className="flex flex-col gap-3 sm:gap-4 lg:gap-[16px] w-full max-w-[484px] mx-auto lg:mx-0 cursor-pointer hover:opacity-90 transition">
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className="rounded-2xl w-full h-[180px] sm:h-[200px] lg:h-[210px] bg-gradient-to-br from-white to-gray-400"
+                  />
+                  <div className="flex flex-col gap-2 lg:gap-[8px]">
 
-          <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-4">
-            {twoCards.map((card, idx) => (
-              <div key={idx} className="flex flex-col gap-2 w-full lg:w-[484px] cursor-pointer hover:opacity-90 transition">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="rounded-2xl w-full h-[210px] bg-gradient-to-br from-white to-gray-400"
-                />
-                <div className="flex items-center justify-between gap-2">
-                  <h4 className="font-body text-lg font-bold leading-[140%] text-white  bg-clip-text">
-                    {card.title}
-                  </h4>
-                  <div className="cursor-pointer transform transition-transform duration-200 hover:scale-125">
-                    <img src={expand} alt="" className="src" />
+                    <div className="flex items-center justify-between gap-3 sm:gap-4 lg:gap-[16px]">
+                      <h4 className="font-body text-base sm:text-lg font-bold leading-[140%] text-white bg-clip-text">
+                        {card.title}
+                      </h4>
+                      <div className="cursor-pointer transform transition-transform duration-200 hover:scale-125">
+                        <img src={expand} alt="" className="w-5 h-5 sm:w-6 sm:h-6" />
+                      </div>
+                    </div>
+
+                    <p className="font-body text-white text-sm sm:text-base font-normal leading-5 sm:leading-6">{card.desc}</p>
                   </div>
                 </div>
-                <p className="font-body text-white text-base font-normal leading-6">{card.desc}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          {/* 3-Card Section */}
-          <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-4 mt-10">
-            {threeCards.map((card, idx) => (
-              <div key={idx} className="flex flex-col gap-2 w-full lg:w-[312px] cursor-pointer hover:opacity-90 transition">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="rounded-2xl w-full h-[210px] bg-gradient-to-br from-white to-gray-400"
-                />
-                <div className="flex items-center justify-between gap-2">
-                  <h4 className="font-body text-lg font-bold leading-[140%] text-white text-transparent bg-clip-text">
-                    {card.title}
-                  </h4>
-                  <div className="cursor-pointer transform transition-transform duration-200 hover:scale-125">
-                    <img src={expand} alt="" className="src" />
+            {/* 3-Card Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-[32px]">
+              {threeCards.map((card, idx) => (
+                <div key={idx} className="flex flex-col gap-3 sm:gap-4 lg:gap-[16px] w-full max-w-[312px] mx-auto lg:mx-0 cursor-pointer hover:opacity-90 transition">
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className="rounded-2xl w-full h-[180px] sm:h-[200px] lg:h-[210px] bg-gradient-to-br from-white to-gray-400"
+                  />
+                  <div className="flex flex-col gap-2 lg:gap-[8px]">
+
+                    <div className="flex items-center justify-between gap-3 sm:gap-4 lg:gap-[16px]">
+                      <h4 className="font-body text-base sm:text-lg font-bold leading-[140%] text-white bg-clip-text">
+                        {card.title}
+                      </h4>
+                    </div>
+
+                    <p className="font-body text-white text-sm sm:text-base font-normal leading-5 sm:leading-6">{card.desc}</p>
                   </div>
                 </div>
-                <p className="font-body text-white text-base font-normal leading-6">{card.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            <button className="holographic-link w-full max-w-[294px] h-[47px] mx-auto">View All</button>
+
           </div>
         </div>
 
         {/* Case Studies */}
-        <div className="w-full bg-gradient-to-b from-[#031030] to-[#062774] px-4 md:px-8 lg:px-16 flex flex-col items-center py-20">
-        <em className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] font-black italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent text-center pt-10">
-          Case Studies
-        </em>
 
-        {visibleCases.map((card, idx) => (
-          <div key={idx} className="w-full max-w-[1000px] flex flex-col lg:flex-row gap-5 mt-10">
-            <div className="w-full h-[210px] lg:w-[482px] lg:h-[316px] rounded-2xl overflow-hidden cursor-pointer hover:opacity-90 transition">
-              <img
-                src={card.img}
-                alt={card.title}
-                className="w-full h-full object-cover bg-gradient-to-br from-white to-gray-400"
-              />
-            </div>
+        <div className="w-full bg-gradient-to-b from-[#031030] to-[#062774] flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-[64px] items-center pb-16 sm:pb-20 md:pb-24 lg:pb-[120px] px-4 sm:px-8 md:px-16 lg:px-24 xl:px-[120px]">
+          <em className="playfair font-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px] leading-tight tracking-[-2%] font-black italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent text-center pt-6 sm:pt-8 lg:pt-10">
+            Case Studies
+          </em>
 
-            <div className="w-full lg:w-[482px] flex flex-col gap-3">
-              <div className="flex items-center justify-between gap-2">
-                <h1 className="font-bold text-lg  text-white  bg-clip-text cursor-pointer hover:opacity-90">
-                  {card.title}
-                </h1>
-                <div className="cursor-pointer transform transition-transform duration-200 hover:scale-125">
-                  <img src={expand} alt="" className="src" />
+          {visibleCases.map((card, idx) => (
+            <div key={idx} className="w-full max-w-[1000px] flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-[36px]">
+
+              <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-[36px] w-full">
+                <div className="w-full lg:w-[482px] h-[200px] sm:h-[250px] lg:h-[316px] rounded-2xl overflow-hidden cursor-pointer hover:opacity-90 transition mx-auto lg:mx-0">
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className="w-full h-full object-cover bg-gradient-to-br from-white to-gray-400"
+                  />
+                </div>
+
+                <div className="w-full lg:w-[482px] flex flex-col gap-4 sm:gap-6 lg:gap-[24px]">
+
+                  <h4 className="font-medium worksans text-xl sm:text-2xl leading-[140%] text-white bg-clip-text cursor-pointer hover:opacity-90">
+                    {card.title}
+                  </h4>
+          
+                  {/* Case study content with conditional expanded text */}
+                  <p className="font-body worksans text-white text-sm sm:text-base font-normal leading-5 sm:leading-6">
+                    {expandedCaseStudies[card.id] ? card.fullDesc : card.desc}
+                  </p>
+                  
+                  {/* Read More button that toggles text expansion */}
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleCaseStudyReadMore(card.id);
+                    }}
+                    className="holo-cards flex justify-center items-center text-sm font-semibold px-6 w-[124px] h-[47px] rounded-md border border-white transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text"
+                  >
+                    {expandedCaseStudies[card.id] ? "Show Less" : "Read more"}
+                  </button>
                 </div>
               </div>
-              
-              {/* Case study content with conditional expanded text */}
-              <p className="font-body text-white text-base font-normal leading-6">
-                {expandedCaseStudies[card.id] ? card.fullDesc : card.desc}
-              </p>
-              
-              {/* Read More button that toggles text expansion */}
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleCaseStudyReadMore(card.id);
-                }}
-                className="relative cursor-pointer flex text-xs sm:text-sm h-[36px] w-[100px] font-semibold items-center justify-center rounded-[8px] text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] via-[#074FF7] to-[#020919] whitespace-nowrap
-                before:absolute before:inset-0 before:rounded-[8px] before:p-[2px] before:bg-gradient-to-b before:from-[#020919] before:via-[#074FF7] before:via-[#6384E9] before:via-[#074FF7] before:to-[#020919] before:-z-10
-                after:absolute after:inset-[2px] after:rounded-[6px] after:bg-white after:-z-10">
-                {expandedCaseStudies[card.id] ? "Show Less" : "Read more"}
-              </button>
             </div>
-          </div>
-        ))}
+          ))}
         </div>
 
         {/* Technical Documentation */}
-    {/* Technical Documentation */}
-<div className="flex flex-col items-center justify-center w-full  px-4 md:px-8 lg:px-16 bg-gradient-to-b from-[#062774] to-[#0944CF]  pb-30 ">
-<em className="playfair font-title text-[32px] md:text-[64px] leading-tight tracking-[-2%] font-black italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent text-center pt-10">            Technical Documentation
+        <div className="flex flex-col items-center gap-8 sm:gap-12 md:gap-16 lg:gap-[80px] px-4 sm:px-8 md:px-16 lg:px-24 xl:px-[120px] pb-16 sm:pb-20 md:pb-24 lg:pb-[120px] mx-auto bg-gradient-to-b from-[#062774] to-[#0944CF]">
+          <em className="playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center">
+            Technical Documentation
           </em>
 
-          <div className="w-full max-w-[1000px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            {techDocs.map((doc, idx) => (
-              <div
-                key={idx}
-                className="w-full h-auto min-h-[144px] rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col justify-between cursor-pointer hover:shadow-md transition"
-                onClick={() => downloadPDF(doc.id, doc.title)}
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <h1 className="text-[16px] font-semibold">{doc.title}</h1>
-                  <div className="cursor-pointer transform transition-transform duration-200 hover:scale-125">
-                    <img src={expand} alt="" className="src" />
+          <div className="w-full max-w-[1000px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-[36px]">
+              {techDocs.map((doc, idx) => (
+                <div
+                  key={idx}
+                  className="min-h-[180px] sm:min-h-[200px] w-full max-w-[317px] mx-auto lg:mx-0 rounded-2xl sm:rounded-[32px] border-[2px] border-white bg-[#FFFFFF4D] shadow-sm p-6 sm:p-8 lg:p-[32px] flex flex-col justify-between cursor-pointer hover:shadow-md transition-shadow"
+                  onClick={() => downloadPDF(doc.id, doc.title)}
+                >
+                  <div className="flex justify-between">
+                    <h1 className="text-sm sm:text-base font-semibold text-white/80">{doc.title}</h1>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex flex-col gap-1">
+                      <span className="worksans text-base sm:text-lg text-white/30">PDF</span>
+                      <img src={pdf} alt="PDF icon" className="w-6 h-6 sm:w-8 sm:h-8 lg:w-[32px] lg:h-[32px]" />
+                    </div>
+                    
+                    <img src={download} alt="Download" className="w-7 h-6 sm:w-8 sm:h-7 lg:w-[33px] lg:h-[32px]" />
                   </div>
                 </div>
-                
-                <div className="flex items-center gap-2 mt-2">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg"
-                    alt="PDF icon"
-                    className="w-6 h-6"
-                  />
-                  <span className="text-[14px] font-normal">PDF</span>
-                  <div className="ml-auto cursor-pointer">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/724/724933.png"
-                      alt="Download icon"
-                      className="w-5 h-5"
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+
       </div>
 
       <div className="">
-      <Footer1 />
+        <Footer1 />
       </div>
     </>
   );
