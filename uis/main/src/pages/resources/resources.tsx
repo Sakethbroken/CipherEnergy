@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "../header";
 import Mobilesidebar from "../mobilesidebar";
 import Footer1 from "../footer";
 import expand from "../../assets/icons/expandwhite.png"
 import pdf from "../../assets/icons/pdf.png";
 import download from "../../assets/icons/download.png";
+import "../../slidecards.css"
 
 const Res = () => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -13,12 +14,51 @@ const Res = () => {
   const [showAllCases, setShowAllCases] = useState(false);
   const [expandedCaseStudies, setExpandedCaseStudies] = useState({});
 
+  // Animation states for case studies
+  const [visibleCaseStudies, setVisibleCaseStudies] = useState({});
+  const caseStudyRefs = useRef({});
+
   const toggleCaseStudyReadMore = (caseId) => {
     setExpandedCaseStudies(prev => ({
       ...prev,
       [caseId]: !prev[caseId]
     }));
   };
+
+  // Intersection Observer for case studies
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const caseId = entry.target.dataset.caseid;
+        if (caseId) {
+          setVisibleCaseStudies(prev => ({
+            ...prev,
+            [caseId]: entry.isIntersecting
+          }));
+        }
+      });
+    }, observerOptions);
+
+    // Observe all case study elements
+    Object.values(caseStudyRefs.current).forEach(ref => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      Object.values(caseStudyRefs.current).forEach(ref => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, [showAllCases]); // Re-run when showAllCases changes
 
   // PDF Download Function for local files
   const downloadPDF = async (docId, docTitle) => {
@@ -165,6 +205,7 @@ const Res = () => {
 
   return (
     <>
+    
       <div className="w-full">
         <Header onHamburgerClick={toggleSidebar} />
         {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
@@ -241,10 +282,20 @@ const Res = () => {
           </em>
 
           {visibleCases.map((card, idx) => (
-            <div key={idx} className="w-full max-w-[1000px] flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-[36px]">
+            <div 
+              key={idx} 
+              className="w-full max-w-[1000px] flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-[36px]"
+              ref={el => caseStudyRefs.current[card.id] = el}
+              data-caseid={card.id}
+            >
 
               <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-[36px] w-full">
-                <div className="w-full lg:w-[482px] h-[200px] sm:h-[250px] lg:h-[316px] rounded-2xl overflow-hidden cursor-pointer hover:opacity-90 transition mx-auto lg:mx-0">
+                {/* Image - slides from left */}
+                <div className={`w-full lg:w-[482px] h-[200px] sm:h-[250px] lg:h-[316px] rounded-2xl overflow-hidden cursor-pointer hover:opacity-90 transition mx-auto lg:mx-0 case-study-image case-study-slide-left ${
+                  visibleCaseStudies[card.id] ? 'visible' : ''
+                }`}
+                style={{ transitionDelay: '0.1s' }}
+                >
                   <img
                     src={card.img}
                     alt={card.title}
@@ -252,7 +303,12 @@ const Res = () => {
                   />
                 </div>
 
-                <div className="w-full lg:w-[482px] flex flex-col gap-4 sm:gap-6 lg:gap-[24px]">
+                {/* Text content - slides from right */}
+                <div className={`w-full lg:w-[482px] flex flex-col gap-4 sm:gap-6 lg:gap-[24px] case-study-content case-study-slide-right ${
+                  visibleCaseStudies[card.id] ? 'visible' : ''
+                }`}
+                style={{ transitionDelay: '0.2s' }}
+                >
 
                   <h4 className="font-medium worksans text-xl sm:text-2xl leading-[140%] text-white bg-clip-text cursor-pointer hover:opacity-90">
                     {card.title}

@@ -26,59 +26,57 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-[1004px] px-4 py-6 md:py-8 mx-auto flex flex-col items-center justify-center gap-4 md:gap-6">
+    <div className="w-full w-[1004px] flex flex-col gap-[32px] items-center justify-center ">
       {/* Banner */}
-      <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 bg-blue-100 rounded-3xl px-2 md:px-3 text-center">
-        <img src={leaficon} alt="icon" className="w-5 h-5 md:w-6 md:h-6" />
-        <p className="text-xs text-black font-medium leading-snug max-w-[280px] sm:max-w-none">
+      <div className="flex w-[524px] h-[44px] items-center gap-[32px] pt-[4px] pb-[4px] pl-[4px] pr-[12px]  bg-blue-100 rounded-[999px] ">
+        <img src={leaficon} alt="icon" className="w-[36px] h-[36px] " />
+        <p className="text-xs h-[18px] worksans text-black font-medium leading-[140%] tracking-normal text-nowrap">
           Saving ₹800+ Billion in Energy Losses While Reducing Carbon Emissions.
         </p>
       </div>
 
       {/* Headline (Line by Line Animation) */}
-      <div className="w-full max-w-[870px] text-center font-extrabold leading-[110%] space-y-3 sm:space-y-4 md:space-y-5">
-        <div
-          ref={(el) => {
-            if (el) linesRef.current[0] = el;
-          }}
-          className="opacity-0"
-        >
-          <em className="playfair bg-gradient-to-r text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[-0.02em] from-white to-[#074FF7] bg-clip-text text-transparent italic">
-            Revolutionary
-          </em>{" "}
-          <span className="worksans text-white font-medium text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[-0.02em]">
-            Axial Flux
-          </span>
-        </div>
-
-        <div
-          ref={(el) => {
-            if (el) linesRef.current[1] = el;
-          }}
-          className="opacity-0"
-        >
-          <span className="worksans text-white font-medium text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[-0.02em]">
-            Electric Motors for India’s
-          </span>
-        </div>
-
-        <div
-          ref={(el) => {
-            if (el) linesRef.current[2] = el;
-          }}
-          className="opacity-0"
-        >
-          <span className="worksans text-white font-medium text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[-0.02em]">
-            Energy
-          </span>{" "}
-          <em className="playfair bg-gradient-to-r font-['Playfair'] text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[-0.02em] from-white to-[#074FF7] bg-clip-text text-transparent italic">
-            Future.
-          </em>
-        </div>
-      </div>
+    <div className="w-full max-w-[870px] text-center font-extrabold leading-[120%] space-y-3 sm:space-y-4 md:space-y-5">
+ <div
+   ref={(el) => {
+     if (el) linesRef.current[0] = el;
+   }}
+   className="opacity-0"
+ >
+   <em className="playfair bg-gradient-to-r text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[-2%] from-white to-[#074FF7] bg-clip-text text-transparent italic font-[800]">
+     Revolutionary
+   </em>
+   <span className="inter text-white font-normal text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[0%] ml-2">
+     Axial Flux
+   </span>
+ </div>
+ <div
+   ref={(el) => {
+     if (el) linesRef.current[1] = el;
+   }}
+   className="opacity-0"
+ >
+   <span className="inter text-white font-normal text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[0%]">
+     Electric Motors for India's
+   </span>
+ </div>
+ <div
+   ref={(el) => {
+     if (el) linesRef.current[2] = el;
+   }}
+   className="opacity-0"
+ >
+   <span className="inter text-white font-normal text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[0%]">
+     Energy
+   </span>
+   <em className="playfair bg-gradient-to-r text-[28px] sm:text-[32px] md:text-[48px] lg:text-[64px] tracking-[-2%] from-white to-[#074FF7] bg-clip-text text-transparent italic font-[800] ml-2">
+     Future.
+   </em>
+ </div>
+</div>
 
       {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-8 w-full items-center justify-center">
+      <div className="flex flex-col sm:flex-row gap-[32px] sm:gap-8 w-full items-center justify-center">
         <Link
           to="./products"
          className=" holographic-link flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] 
@@ -98,6 +96,8 @@ bg-transparent hover:bg-white hover:text-[#020919] text-nowrap transition-colors
           EXPLORE PRODUCTS
         </Link>
       </div>
+
+
     </div>
   );
 };

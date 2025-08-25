@@ -106,10 +106,11 @@ const CHome = () => {
         </div>
 
         {/* Image Carousel */}
-        <div className="w-full">
+        
+      </div>
+      <div className="w-full">
           <ImageCarousel />
         </div>
-      </div>
 
       {/* Footers */}
       <Footer2 />

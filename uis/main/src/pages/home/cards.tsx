@@ -1,9 +1,48 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import engine from "../../assets/images/engine.png";
 import {Link} from "react-router-dom"
 import TiltWrapper from "@/components/ui/TiltWrapper";
+import "../../slidecards.css"; // Make sure this CSS file is imported
 
 const Cards = ({ title, isImageRight = false, cardData }) => {
+  const [visibleSections, setVisibleSections] = useState({});
+  const sectionRefs = useRef({});
+
+  // Intersection Observer for slide animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const sectionId = entry.target.dataset.sectionid;
+        if (sectionId) {
+          setVisibleSections(prev => ({
+            ...prev,
+            [sectionId]: entry.isIntersecting
+          }));
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    Object.values(sectionRefs.current).forEach(ref => {
+      if (ref) {
+        observer.observe(ref);
+      }
+    });
+
+    return () => {
+      Object.values(sectionRefs.current).forEach(ref => {
+        if (ref) {
+          observer.unobserve(ref);
+        }
+      });
+    };
+  }, []);
+
   return (
     <div className="flex flex-col items-center gap-[32px] w-[1272px]">
       {/* Title */}
@@ -21,14 +60,21 @@ const Cards = ({ title, isImageRight = false, cardData }) => {
             isImageRight ? "md:flex-row-reverse" : "md:flex-row"
           }`}
         >
-          {/* Image */}
-       
+          {/* Image with animation */}
+          <div
+            ref={el => sectionRefs.current['image'] = el}
+            data-sectionid="image"
+            className={`case-study-image card-slide-bottom ${
+              visibleSections['image'] ? 'visible' : ''
+            }`}
+            style={{ transitionDelay: '0.1s' }}
+          >
             <img
               src={engine}
               alt="Engine"
               className="rounded-[32px] w-full max-w-[636px] h-auto object-cover"
             />
-    
+          </div>
 
           {/* Grid */}
          <div className="w-full flex flex-col gap-[24px] md:w-1/2 flex-shrink-0 max-w-[636px]">

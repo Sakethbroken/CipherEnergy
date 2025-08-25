@@ -4,6 +4,7 @@ import Prod from "./products";
 const ProductsPage = () => {
 
     return (
+        
         <div className="w-full h-full">
             <Prod/>
             
