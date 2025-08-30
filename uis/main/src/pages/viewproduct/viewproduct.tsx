@@ -9,7 +9,7 @@ import ParentComponent from "./timeline";
 import { useParams } from "react-router-dom";
 import expand from "../../assets/icons/expand.png"
 import { Link } from "react-router-dom";
-
+import TestimonialCarousel from "../CipherEnergy/uis/main/src/pages/viewproduct/TestimonialCarousel";
 const cscards = [
   {
     title: "Electric Vehicles (EVs)",
@@ -168,9 +168,14 @@ const ViewProduct = () => {
       {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
 
       {/* Hero Section */}
+      {/*<div className="w-full relative py-6 bg-gradient-to-b from-[#020919] to-[#074FF7]">
+        <Hero title={product.title} tagline={product.tagline} />
+      </div>*/}
       <div className="w-full relative py-6 bg-gradient-to-b from-[#020919] to-[#074FF7]">
         <Hero title={product.title} tagline={product.tagline} />
+        <TestimonialCarousel/>
       </div>
+      
 
       {/* Key Specifications Section */}
       <div className="w-full bg-gradient-to-b from-[#074FF7] to-[#052C88]">

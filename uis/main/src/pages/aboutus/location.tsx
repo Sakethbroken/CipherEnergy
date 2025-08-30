@@ -23,9 +23,14 @@ function Cards({ title, address }) {
         <p className="font-body font-normal  text-md text-black leading-[27px] opacity-80">
           {address || "[address here]"}
         </p>
-        <button className="holo-trans text-black pl-5 self-start text-xs sm:text-sm font-semibold w-[120px] sm:w-[150px]  h-[40px] rounded-md border-2 border-[#074FF7] hover:opacity-30 transition overflow-hidden whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]">
-          Get Directions
-        </button>
+        
+        <button className="holo-trans text-blue-900 pl-5 self-start text-xs sm:text-sm font-semibold w-[120px] sm:w-[150px] h-[40px] rounded-md border-2 border-[#074FF7] hover:opacity-30 transition overflow-hidden whitespace-nowrap bg-clip-text bg-gradient-to-tr from-[#020919] via-[#074FF7] via-[#6384E9] to-[#020919]">
+  Get Directions
+</button>
+
+  
+
+
 
       </div>
    

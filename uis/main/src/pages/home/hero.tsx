@@ -80,14 +80,15 @@ const Hero = () => {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-3 sm:gap-8 w-full items-center justify-center">
         <Link
-          to="./products"
-         className=" holographic-link flex justify-center items-center text-xs sm:text-sm font-semibold w-full sm:w-auto px-6 h-[40px] 
-rounded-tl-[1rem] rounded-br-[1rem] border-2 border-[#074FF7] transition overflow-hidden whitespace-nowrap 
-text-white bg-gradient-to-r from-[#074FF7] via-[white opacity-30] to-[#6384E9]"
+  to="./products"
+  className="holographic-link flex justify-center items-center text-xs sm:text-sm font-semibold 
+  w-full sm:w-auto px-6 h-[40px] 
+  rounded-tl-[1rem] rounded-br-[1rem] border-2 border-[#074FF7] transition overflow-hidden whitespace-nowrap 
+  text-white bg-gradient-to-r from-[#074FF7] via-white/30 to-[#6384E9]"
+>
+  EXPLORE PRODUCTS
+</Link>
 
-        >
-          EXPLORE PRODUCTS
-        </Link>
         <Link
           to="./contactus"
          className="holo-trans flex justify-center items-center text-xs sm:text-sm font-semibold sm:w-auto px-5 w-full  h-[40px]

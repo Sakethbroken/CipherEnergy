@@ -15,6 +15,7 @@ import renewable from "../../assets/images/renewable.png";
 import Hero from "./hero";
 import pdf from "../../assets/icons/pdf.png";
 import download from "../../assets/icons/download.png";
+import Footer1 from "../footer";
 const Apps = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const navigate = useNavigate();
@@ -91,6 +92,7 @@ const Apps = () => {
   ];
 
   return (
+    <div className="w-full flex flex-col">
     <div className="w-full overflow-x-hidden">
       <Header onHamburgerClick={toggleSidebar} />
       {showSidebar && <Mobilesidebar onClose={toggleSidebar} />}
@@ -109,9 +111,14 @@ const Apps = () => {
       <div className="bg-gradient-to-b flex flex-col from-[#074FF7] to-[#031B51] p-[120px] gap-[80px]">
 
         <div className="flex flex-col items-center  w-[768px] h-[193px] mx-auto gap-[14px]">
-          <em className="playfair text-[32px] md:text-[64px] italic bg-gradient-to-r from-white to-[#074FF7] bg-clip-text text-transparent font-black text-center">
-            Electrical Vehicle
-          </em>
+          <em
+  className="playfair text-[32px] md:text-[64px] italic 
+  bg-gradient-to-r from-[#DEE6FF] to-[#5E8CFB] 
+  bg-clip-text text-transparent font-black text-center"
+>
+  Electric Vehicle
+</em>
+
           <p className="text-xl worksans text-white  text-center w-[344px] h-[102px]">
             Accelerating India's transition to electric mobility with high-efficiency axial flux motors
           </p>
@@ -204,6 +211,9 @@ const Apps = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Footer1/>
+
     </div>
   );
 };

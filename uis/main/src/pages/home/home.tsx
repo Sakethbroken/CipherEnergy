@@ -9,6 +9,7 @@ import ImageCarousel from "./swiper";
 import BenefitsTimeline from "./timeline";
 import Mobiletimeline from "./smtimeline";
 import ScrollVideo from "@/components/ScrollControlledVideo.tsx";
+import ExplodedView from "./ExplodeView";
 
 import powericon from "../../assets/images/powericon.png";
 import torqueicon from "../../assets/images/peaktorque.png";
@@ -42,10 +43,15 @@ const CHome = () => {
           background: "linear-gradient(to bottom, #020919, #074FF7, #020919)",
         }}
       >
-        {/* Hero Section */}
-        <div className="flex flex-col items-center w-full py-12 md:py-20">
-          <Hero />
-        </div>
+       <div className="bg-[url('/assets/images/Noise.png')] bg-cover bg-center">
+  {/* Hero Section */}
+  <div className="flex flex-col items-center w-full py-12 md:py-20">
+    <Hero />
+  </div>
+  <ExplodedView />
+</div>
+
+
 
         {/* Scroll Synced Video Section */}
         {/* <div>
@@ -59,7 +65,7 @@ const CHome = () => {
               Key
             </span>
             <span className="playfair font-black italic text-4xl sm:text-5xl md:text-6xl text-center leading-tight bg-gradient-to-r from-white to-transparent bg-clip-text text-transparent">
-              benefits
+              Benefits
             </span>
           </div>
           <p className="text-sm md:text-base text-white font-normal text-center opacity-80">
